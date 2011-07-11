@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<Document xmlns="http://www.evolus.vn/Namespace/Pencil"><Properties/><Pages><Page><Properties><Property name="name">Untitled Page</Property><Property name="id">1310200049893_7893</Property><Property name="width">924</Property><Property name="height">534</Property><Property name="dimBackground">false</Property></Properties><Content><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 45, 207)"><p:metadata><p:property name="box"><![CDATA[200,80]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[Proxy layer with limited access to UI methods for device<br />]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="200" height="80" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect11310200166319" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter11310200166319">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect11310200166319" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter11310200166319)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy11310200166319"/>
+            <use xlink:href="#rrRect11310200166319" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="26" width="180" height="28" p:name="text" id="text11310200166319" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">Proxy layer with limited access to UI methods for device<br /></div></foreignObject><path id="text11310200166319_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 95, 373)"><p:metadata><p:property name="box"><![CDATA[95,45]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[Device]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="95" height="45" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect21310200245681" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter21310200245681">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect21310200245681" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter21310200245681)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy21310200245681"/>
+            <use xlink:href="#rrRect21310200245681" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="16" width="75" height="14" p:name="text" id="text21310200245681" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">Device</div></foreignObject><path id="text21310200245681_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 361, 205)"><p:metadata><p:property name="box"><![CDATA[200,80]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[UI layer - containing methods for controlling UI changes, effects, maintaining state and communicating via api<br />]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="200" height="80" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect31310200272468" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter31310200272468">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect31310200272468" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter31310200272468)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy31310200272468"/>
+            <use xlink:href="#rrRect31310200272468" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="12" width="180" height="56" p:name="text" id="text31310200272468" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">UI layer - containing methods for controlling UI changes, effects, maintaining state and communicating via api<br /></div></foreignObject><path id="text31310200272468_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 344, 55)"><p:metadata><p:property name="box"><![CDATA[230,80]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[Event listener - keeping track of different user triggered events on  UI.<br />]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="230" height="80" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect41310200308942" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter41310200308942">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect41310200308942" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter41310200308942)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy41310200308942"/>
+            <use xlink:href="#rrRect41310200308942" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="26" width="210" height="28" p:name="text" id="text41310200308942" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">Event listener - keeping track of different user triggered events on  UI.<br /></div></foreignObject><path id="text41310200308942_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 362, 353)"><p:metadata><p:property name="box"><![CDATA[200,80]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[User Interface<br />]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="200" height="80" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect51310200550483" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter51310200550483">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect51310200550483" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter51310200550483)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy51310200550483"/>
+            <use xlink:href="#rrRect51310200550483" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="33" width="180" height="14" p:name="text" id="text51310200550483" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">User Interface<br /></div></foreignObject><path id="text51310200550483_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 676, 202)"><p:metadata><p:property name="box"><![CDATA[200,80]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[API methods<br />]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="200" height="80" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect61310200587094" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter61310200587094">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect61310200587094" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter61310200587094)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy61310200587094"/>
+            <use xlink:href="#rrRect61310200587094" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="33" width="180" height="14" p:name="text" id="text61310200587094" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">API methods<br /></div></foreignObject><path id="text61310200587094_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" transform="matrix(1, 0, 0, 1, 676, 353)"><p:metadata><p:property name="box"><![CDATA[200,80]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[7,0]]></p:property><p:property name="textPadding"><![CDATA[0,10]]></p:property><p:property name="fillColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeColor"><![CDATA[#000000FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[Data Sources eg: local store, google<br />]]></p:property><p:property name="textFont"><![CDATA[Arial|normal|normal|12px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="200" height="80" rx="7" ry="7" x="0" y="0" style="stroke-width: 0pt; fill: rgb(51, 102, 153); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1;" p:name="rrRect" id="rrRect71310200611636" transform="translate(0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="shadingFilter71310200611636">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#rrRect71310200611636" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#shadingFilter71310200611636)" style="opacity: 0.5; visibility: hidden;" p:heavy="true" p:name="bgCopy" id="bgCopy71310200611636"/>
+            <use xlink:href="#rrRect71310200611636" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="10" y="26" width="180" height="28" p:name="text" id="text71310200611636" style="font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(255, 255, 255); fill-opacity: 1; color: rgb(255, 255, 255); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">Data Sources eg: local store, google<br /></div></foreignObject><path id="text71310200611636_underline" style="fill: none; stroke-width: 1px; visibility: hidden;"/>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 140, 351)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[0,-45]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker91310200845274">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath91310200845274" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker91310200845274)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path91310200845274" transform="translate(0, 0.5)" d="M 0 0 L 0 -45"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 461, 290)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[0,40]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker9131020084527470">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath9131020084527470" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker9131020084527470)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path9131020084527470" transform="translate(0, 0.5)" d="M 0 0 L 0 40"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 461, 140)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[0,45]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker9131020084527470581">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath9131020084527470581" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker9131020084527470581)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path9131020084527470581" transform="translate(0, 0.5)" d="M 0 0 L 0 45"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 600, 242)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[50,0]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker913102008452747058157">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath913102008452747058157" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker913102008452747058157)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path913102008452747058157" transform="translate(0, 0.5)" d="M 0 0 L 50 0"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 648, 242)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[-55,0]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker913102008452747058157437">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath913102008452747058157437" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker913102008452747058157437)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path913102008452747058157437" transform="translate(0, 0.5)" d="M 0 0 L -55 0"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 140, 304)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[0,50]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker91310200845274388">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath91310200845274388" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker91310200845274388)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path91310200845274388" transform="translate(0, 0.5)" d="M 0 0 L 0 50"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 280, 242)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[50,0]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker913102008452747058157986">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath913102008452747058157986" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker913102008452747058157986)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path913102008452747058157986" transform="translate(0, 0.5)" d="M 0 0 L 50 0"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 328, 242)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[-55,0]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker913102008452747058157437194">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath913102008452747058157437194" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker913102008452747058157437194)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path913102008452747058157437194" transform="translate(0, 0.5)" d="M 0 0 L -55 0"/>
+            </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Annotation:SimpleArrow" transform="matrix(1, 0, 0, 1, 776, 290)"><p:metadata><p:property name="a"><![CDATA[0,0]]></p:property><p:property name="b"><![CDATA[10,-75]]></p:property><p:property name="c"><![CDATA[0,40]]></p:property><p:property name="style"><![CDATA[straight]]></p:property><p:property name="strokeColor"><![CDATA[#336699FF]]></p:property><p:property name="strokeStyle"><![CDATA[25|]]></p:property></p:metadata>
+                <defs>
+                    <marker viewBox="0 0 10 10" refX="0.01" refY="3" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto" p:name="marker" id="marker9131020084527470979">
+                      <path d="M 0 0 L 2 3 L 0 6 z" p:name="markerPath" id="markerPath9131020084527470979" style="fill: rgb(51, 102, 153); fill-opacity: 1;"/>
+                    </marker>
+                </defs>
+                <path marker-end="url(#marker9131020084527470979)" fill="none" style="stroke-linejoin: round; stroke: rgb(51, 102, 153); stroke-opacity: 1; stroke-width: 25;" p:name="path" id="path9131020084527470979" transform="translate(0, 0.5)" d="M 0 0 L 0 40"/>
+            </g></Content></Page></Pages></Document>
