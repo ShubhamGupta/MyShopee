@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.0b1.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+    </head>
+    <body>
+                
+        <div data-role="page" id="home-container">
+            <div class='header'>
+                <div class='time'></div>
+                <div class='logo'></div>
+                <div class='title'>BOARD ROOM</div>
+            </div>
+            <div id="home-accordion" class="accordion-container">
+                <div id="home" class="collapsible open">
+                    <h1>Available Meetings</h1>
+                    <div class='tiles-container' id='home-tiles'>
+                        <div class='tiles'>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="quickconnect" class="collapsible closed">
+                    <h1>Recent Meetings</h1>
+                    <div class='tiles-container' id='quickconnect-tiles'>
+                        <div class='tiles'>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="home-newmeeting" class="collapsible closed black">
+                    <h1>New Meeting</h1>
+                    <div id="touch-container-1" class="touch-container">
+                        <p class="touch-to-enter"><a href="#newmeeting" data-transition='slideup'>touch to enter a meeting name</a></p>
+                    </div>
+                </div>
+                
+                <div id="home-dial" class="collapsible closed black">
+                    <h1>Dial a Phone Number</h1>
+                    <div id="touch-container-2" class="touch-container">
+                        <p class="touch-to-enter"><a href="#dialpad" data-transition="slideup">touch to enter a phone number</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="adjustcamera" class='dialog'>
+            <div data-role="content">
+                <div class='footer'>
+                    <a href='#' target='_blank' id='togglecamera'><img src='images/main/icons/hide-video.png'>hide video</a>
+                    <a href="#inmeeting" data-direction="reverse" data-transition="slideup">done</a>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="inmeeting">
+            <div data-role="content">
+                <div class='header'>
+                    <div class='time'></div>
+                    <div class='logo'></div>
+                    <div class='title'>BOARD ROOM</div>
+                </div>
+                <a class='small-time' href="#">cancel</a>
+                <h1></h1>
+
+                <div class='tiles-container' id='inmeeting-tiles'>
+                    <div class='tiles'>
+                    </div>
+                </div>
+
+                <div class='footer'>
+                    <a href='#' target='_blank' id='chats'><img src='images/main/icons/chats.png'>show chats</a>
+                    <a href='#invite' data-transition='slideup'><img src='images/main/icons/invite.png'>invite guest</a>
+                    <a href='#meeting-dialpad' data-transition='slideup'><img src='images/main/icons/addcall.png'>add caller</a>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="dialpad" class='dialpad dialog'>
+            <div data-role="content" class='keypad'>
+                <div class='field'></div>
+                <a href='#' target='_blank' class='keys'></a>
+                <a href="#home-container" data-direction="reverse" data-transition="slideup" class='cancel-button'></a>
+                <a href='#' target='_blank' class='invite-button home-button'></a>
+            </div>
+        </div>
+
+        <div data-role="page" id="meeting-dialpad" class='dialpad dialog'>
+            <div data-role="content" class='keypad'>
+                <div class='field'></div>
+                <a href='#' target='_blank' class='keys'></a>
+                <a href="#inmeeting" data-direction="reverse" data-transition="slideup" class='cancel-button'></a>
+                <a href='#' target='_blank' class='invite-button'></a>
+            </div>
+        </div>
+
+        <div data-role="page" id="invite" class='dialog'>
+            <div data-role="content" class='keyboard'>
+                <div class='field'></div>
+                <div class='autocomplete'><a href='#' target='_blank'>tomas557@gmail.com</a><a href='#' target='_blank'>jsmith@tomohawk.com</a></div>
+                <a href='#' target='_blank' class='keys'></a>
+                <a href="#inmeeting" data-direction="reverse" data-transition="slideup" class='cancel-button'></a>
+                <a href="#inmeeting" data-transition="flip" class='invite-button'></a>
+            </div>
+        </div>
+
+        <div data-role="page" id="newmeeting">
+            <div data-role="content" class='keyboard'>
+                <div class='field'>Acme Team Sync-Up</div>
+                <a href='#' target='_blank' class='keys'></a>
+                <a href="#home-container" data-direction="reverse" data-transition="slideup" class='cancel-button'></a>
+                <a href='#' target='_blank' class='start-button'></a>
+            </div>
+        </div>
+
+        <div id="splash-screen">
+            <div class='header'>
+                <div class='logo'></div>
+                <div class='title'>BOARD ROOM</div>
+            </div>
+            <div class="splash-time">
+                <p></p>
+            </div>
+            <div class="splash-date">
+                <p></p>
+            </div>
+        </div>
+
+        <div id="toast">
+            <p id="toast-title">Now Joining...</p>
+            <h2>Widget Sync-Up
+            <br>2:00 - 3:00pm</h2>
+            <button id="cancel-toast">cancel</button>
+        </div>
+
+        
+        
+        
+    <!-- js at the bottom to load the page faster -->
+    <script src="../lib/jquery-1.6.1.min.js"></script>
+    <script src="../lib/jquery.mobile-1.0b1.min.js"></script>
+    <script src="../lib/date.format.js"></script>
+    <script src="../lib/touch-scroll.js"></script>
+    
+    
+    <script src="../core/global.js"></script>
+    <script src="../core/api.js"></script>
+    <script src="../core/ui.js"></script>
+    <script src="../core/proxy.js"></script>
+    <script src="../config/init.js"></script>
+    
+    <script src="../core/events.js"></script>
+
+        
+    </body>
+</html>

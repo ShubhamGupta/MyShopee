@@ -1,0 +1,520 @@
+@font-face {
+    font-family: "Droid Sans";
+    src: url("../fonts/DroidSans.ttf") format("truetype");
+}
+body{
+    font-size:14px;
+    font-family: "Droid Sans", sans-serif;
+    background:transparent url(../images/backgrounds/body.png) repeat top left;
+}
+
+.clear{
+    clear:both;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.center{
+    text-align:center;
+}
+a{
+    text-decoration:none;
+    font-weight:normal !important;
+    font-size:13px;
+}
+h1{
+    margin:5px 15px 8px;
+    font-size:18px;
+    color:#fff;
+}
+.cancel, .small-time{
+    float:right;
+    text-transform:uppercase;
+    padding-bottom:3px;
+    border:12px solid #feb515;
+    -moz-border-image: url(../images/main/buttons/round.png) 12 12 12 12 stretch;
+    -webkit-border-image: url(../images/main/buttons/round.png) 12 12 12 12 stretch;
+    font-size:11px;
+    margin-right:13px;
+    margin-top:5px;
+}
+.small-time{
+    padding-bottom:0;
+    border:5px solid #feb515;
+    -moz-border-image: url(../images/main/buttons/small-time-background.png) 5 5 5 5 stretch;
+    -webkit-border-image: url(../images/main/buttons/small-time-background.png) 5 5 5 5 stretch;
+    line-height:16px;
+    padding:0 5px;
+    font-size:13px;
+    color:#000 !important;
+}
+#blinking-cursor{
+    margin-left:-7px;
+}
+#repetitions{
+    display:none;
+}
+
+#screensaver .ui-content{
+    background:transparent url(../images/popups/screensaver.png) no-repeat 50% 50%;
+}
+#screensaver .ui-content a{
+    display:block;
+    height:200px;
+    text-indent:-2000px;
+}
+
+#adjustcamera .ui-content{
+    background:#000 url(../images/popups/camera-background.jpg) no-repeat top left;
+}
+#adjustcamera .ui-content.hidden{
+    background-image:none;
+}
+
+.header{
+    height:27px;
+    padding:5px 15px 5px 10px;
+    position:relative;
+}
+.header .logo{
+    width:45px;
+    height:30px;
+    background:url("../images/main/header/logo-2.png") no-repeat scroll 50% 50% transparent;
+}
+.header .time{
+    float:right;
+    height:17px;
+    width:220px;
+    margin-top:10px;
+    color:#fff;
+    font-size: 15px;
+    text-align:right;
+}
+.header .time span{
+    border-right:1px solid #ccc;
+    font-size:11px;
+    margin-right:2px;
+}
+.header .title{
+    width:200px;
+    height:20px;
+    text-transform:uppercase;
+    position:absolute;
+    left:50%;
+    margin-left:-100px;
+    top:12px;
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    color:#fff;
+    line-height:20px;
+}
+
+/*tiling*/
+/*hide scrollbars in webkit*/
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+}
+.tiles-container{
+    width:100%;
+    overflow-x:scroll;
+    margin-top:6px;
+}
+
+.tiles{
+    width:2000px;
+    overflow:hidden;
+}
+.tiles>a{
+    width:160px;
+    height:70px;
+    float:left;
+    margin:0 0;
+    border: 10px solid #feb515;
+    -moz-border-image: url(../images/main/tiles/tile1.png)  10 10 10 10 stretch;
+    -webkit-border-image: url(../images/main/tiles/tile1.png)  10 10 10 10 stretch;
+}
+.tiles>a.selected, .tiles>a:active{
+    -moz-border-image: url(../images/main/tiles/tile1-selected.png)  10 10 10 10 stretch;
+    -webkit-border-image: url(../images/main/tiles/tile1-selected.png)  10 10 10 10 stretch;
+    color:#fff;
+}
+.tiles h3{
+    padding:8px 5px 6px 10px;
+    font-size:13px;
+}
+.tiles p{
+    padding:5px 0 0 18px;
+    font-size:13px;
+}
+.tiles h3{
+    text-align:center;
+    color:#000;
+    font-weight:bold;
+    background:transparent url(../images/main/tiles/hr.png) no-repeat bottom center;
+}
+.tiles p{
+    margin-top:7px;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+#inmeeting .hr{
+    height:50px;
+    width:100%;
+    background:transparent url(../images/main/header/hr.png) no-repeat top center;
+}
+#inmeeting .tiles{
+    padding:0 0 10px;
+}
+#inmeeting .tiles>a{
+    -moz-border-image: url(../images/main/tiles/tile2.png)  8 10 10 10 stretch;
+    -webkit-border-image: url(../images/main/tiles/tile2.png)  8 10 10 10 stretch;
+    overflow:hidden;
+    margin: 0 -2px;
+    width:170px;
+    height:125px;
+}
+#inmeeting .tiles>a.selected{
+    -moz-border-image: url(../images/main/tiles/tile2-selected.png) 8 10 10 10 stretch;
+    -webkit-border-image: url(../images/main/tiles/tile2-selected.png) 8 10 10 10 stretch;
+}
+#inmeeting.single .tiles>a.current{
+    margin-left:150px;
+}
+#inmeeting .tiles>a.current div>span{
+    background-image:url("../images/main/icons/settings.png");
+}
+#inmeeting .tiles>a.current div>span.selected{
+    background-image:url("../images/main/icons/settings.png");
+}
+#inmeeting .tiles>a div{
+    height: 95px;
+    margin: 0 4px;
+    width: 162px;
+    -moz-border-radius-topleft:7px;
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-left-radius:7px;
+    -webkit-border-top-right-radius:5px;
+    background:url("../images/main/tiles/tile2.png") no-repeat scroll 50% 50% #000;
+    position:relative;
+}
+#inmeeting .tiles>a.hidden div{
+    background-image:none !important;
+}
+#inmeeting .tiles>a.object div>span{
+    display:none;
+}
+#inmeeting .tiles>a div>span{
+    position:absolute;
+    right:-5px;
+    top:-5px;
+    background:url("../images/main/icons/unmuted.png") no-repeat scroll 50% 50% transparent;
+    width:55px;
+    height:55px;
+    z-index:1;
+}
+#inmeeting .tiles>a div>span.selected{
+    background-image:url("../images/main/icons/muted.png");
+}
+#inmeeting .tiles>a div img{
+    width: 162px;
+}
+
+#inmeeting .tiles h3{
+    background:none;
+    color:inherit;
+}
+#inmeeting .footer a{
+    width:123px;
+    padding:6px 10px 0;
+}
+
+.keyboard{
+    background:transparent url(../images/popups/keyboard/keyboard.png) no-repeat top left;
+    position:relative;
+    color:#fff;
+}
+#newmeeting .keyboard{
+    background-image:url(../images/popups/keyboard/keyboard-meeting.png);
+}
+#newmeeting .keyboard .field{
+    top:53px;
+    left:20px;
+}
+#newmeeting .keyboard .cancel-button{
+    top:45px;
+}
+#newmeeting .keyboard .start-button{
+    top:227px;
+}
+.keyboard.withtext .field{
+    display:block;
+}
+.keyboard.withautocomplete .autocomplete{
+    display:block;
+}
+.keyboard .field{
+    display:none;
+    position:absolute;
+    top:14px;
+    left:50px;
+    width:318px;
+    height:20px;
+}
+.keyboard .autocomplete{
+    display:none;
+    position:absolute;
+    top:52px;
+    height:33px;
+    left:0;
+    width:100%;
+    overflow:hidden;
+}
+.keyboard .autocomplete a{
+    float:left;
+    padding:7px 15px;
+    border:1px solid #fff;
+    margin-left:10px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.keyboard .autocomplete a:active{
+    background-color:#838383;
+    border-color:#838383;
+}
+.keyboard>a{
+    position:absolute;
+    right:10px;
+    width:70px;
+    height:33px;
+    top:10px;
+}
+.keyboard .keys{
+    width:100%;
+    height:180px;
+    left:0;
+    top:86px;
+}
+.keyboard a.invite-button{
+    top:230px;
+}
+
+.keypad{
+    background:transparent url(../images/popups/keypad/keypad.png) no-repeat top left;
+    position:relative;
+    color:#fff;
+}
+.keypad.withtext .field{
+    display:block;
+}
+.keypad div, .keypad a{
+    position:absolute;
+}
+.keypad .field{
+    top:14px;
+    left:20px;
+    width:440px;
+    height:40px;
+    font-size:30px;
+    line-height:40px;
+}
+.keypad a{
+}
+.keypad .keys{
+    width:100%;
+    height:180px;
+    left:0;
+    top:86px;
+}
+.keypad .cancel-button, .keypad .invite-button{
+    top:127px;
+    right:10px;
+    width:145px;
+    height:45px;
+    background:#000 url(../images/popups/keypad/keypad-cancel.png) no-repeat 50% 50%;
+}
+.keypad .invite-button{
+    top:174px;
+    height:87px;
+    background-image:none;
+}
+.keypad.ready .invite-button{
+    background-image:url(../images/popups/keypad/keypad-connect_call.png);
+}
+.keypad.connecting .invite-button{
+    background-image:none;
+}
+.keypad.connected .invite-button{
+    background-image:url(../images/popups/keypad/keypad-return_to_meeting.png);
+}
+.keypad.connected .cancel-button{
+    background-image:url(../images/popups/keypad/keypad-disconnect.png);
+}
+
+/* New blocks and accordion */
+
+#splash-screen{
+    position:absolute;
+    top:0;
+    left:0;
+    width:480px;
+    height:272px;
+    background:black url(../images/backgrounds/blue.png) top left no-repeat;
+    z-index:999;
+    color:white;
+    text-align:center;
+    cursor:pointer;
+}
+.splash-time{
+    font-size: 130px;
+}
+.splash-date{
+    margin-top:20px;
+    font-size: 32px;
+}
+.splash-date span{
+    border-right:1px solid #ccc;
+    font-size:22px;
+    margin-right:6px;
+}
+#home-container{
+    
+}
+#home-newmeeting, #home-dial{
+    background: black;
+}
+.touch-to-enter{
+    width:330px;
+    height:25px;
+    background: transparent url(../images/main/buttons/home-touch-background.png) top left no-repeat;
+    margin:30px 0 0 70px;
+    padding:10px 0 0 0;
+    text-align:center;
+    font-size:16px;
+    font-weight:lighter;
+    font-style:italic;
+    color:white;
+}
+.collapsible {
+    width:100%;
+    overflow:hidden;
+}
+.collapsible h1{
+    height:17px;
+    width:100%;
+    padding:8px 0 8px 15px;
+    margin: 0 0 0 0;
+}
+
+.closed {
+    cursor:pointer;
+    height:33px;
+    overflow:hidden;
+    -webkit-transition:height 0.2s;
+}
+.closed>div{
+    display:none;
+}
+.open {
+    height:135px;
+    overflow:hidden;
+    -webkit-transition:height 0.2s;
+}
+.open h1 {
+    background: url(../images/main/buttons/accordion-active.png) top left no-repeat;
+}
+.black h1 {
+    background: url(../images/main/buttons/accordion-active-black.png) top left no-repeat;
+}
+.closed h1 {
+    background: url(../images/main/buttons/accordion-collapsed.png) top left no-repeat;
+}
+
+#toast{
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:480px;
+    height:272px;
+    background:transparent url(../images/main/buttons/toast-background.png) top left no-repeat;
+    z-index:999;
+    color:white;
+    text-align:center;
+    cursor:pointer;
+}
+#toast-title{
+    font-size:14px;
+    margin-top:72px;
+}
+#toast h2{
+    margin-top:15px;
+    font-size:20px;
+}
+#cancel-toast{
+    width:123px;
+    height:34px;
+    padding:8px 33px;
+    margin-top:20px;
+    background:transparent url(../images/main/buttons/button-background.png) top left no-repeat;
+    text-transform: uppercase;
+    text-align:center;
+    color:white;
+    font-size:12px;
+    border:none;
+}
+
+/*overrides*/
+.ui-page{
+    background:transparent url(../images/backgrounds/blue.png) no-repeat top left;
+    font-size:17px;
+    font-family: "Droid Sans", serif;
+    width:480px !important;
+    height:272px !important;
+    min-height:272px !important;
+}
+.ui-body-c, .ui-body-c .ui-link, a{
+    text-shadow:none;
+    color:#ccc;
+}
+.ui-content{
+    padding:0;
+    overflow: inherit;
+    height:100%;
+    position:relative;
+}
+
+.ui-content .footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align:center;
+}
+.ui-content .footer a{
+    display:inline-block;
+    padding:6px 20px 0;
+    text-transform:uppercase;
+    text-align:center;
+    line-height:30px;
+
+    border:5px solid #feb515;
+    -moz-border-image: url(../images/main/buttons/big-tab.png) 5 5 5 5 stretch;
+    -webkit-border-image: url(../images/main/buttons/big-tab.png) 5 5 5 5 stretch;
+    width:130px;
+}
+
+.ui-content .footer a:active{
+    -moz-border-image: url(../images/main/buttons/big-tab-selected.png) 5 5 5 5 stretch;
+    -webkit-border-image: url(../images/main/buttons/big-tab-selected.png) 5 5 5 5 stretch;
+}
+.ui-content .footer a img{
+    vertical-align:middle;
+    margin-left:-10px;
+    margin-right:3px;
+}
