@@ -1,24 +1,32 @@
 var sequenceAPI = {
-    startTimers: function(){
-        var date = new Date();
-        $('.header .time').html(date.format('ddd - mmm dd - h:MM').replace(/-/g, "<span>&nbsp;</span>")).bind('click', function(){
-            $('#splash-screen').fadeIn(); // Easter egg to get the splash screen back
-        }).css('cursor','pointer');
-        // Format date and time for splash screen
-        $('.splash-time').html(date.format('h:MM'));
-        $('.splash-date').html(date.format('ddd - mmm dd').replace(/-/g, "<span>&nbsp;</span>"))
-
-        Global.inmeetingTime++;
-        _seconds = Global.inmeetingTime%60 < 10 ? '0' + Math.floor(Global.inmeetingTime%60) : '' + Math.floor(Global.inmeetingTime%60);
-        _minutes = '' + Math.floor(Global.inmeetingTime/60);
-        $('.small-time').html('' + _minutes + ':' + _seconds);
-        setTimeout(this.startTimers, 1000);
-    
+    screenSaver: function(){
+        var options = {date: new Date()};
+        
+        return options;
     },
     
-    getMeetings: function(){},
-    connectMeeting: function(){},
-    currentMeeting: function(){},
+    getMeetings: function(options){
+        var type = options['type'];
+        
+        return Data['meetings'][type];
+    },
+    
+    connectMeeting: function(meeting){
+        this.currentMeeting(meeting);
+        UI.processingPopup(1, {message: meeting.meeting_name});
+        
+        setTimeout('UI.processingPopup(0)', 2000);
+    },
+    
+    currentMeeting: function(meeting){
+        if(meeting){
+            Global.current_meeting = meeting;
+            return meeting;
+        }else{
+            return Global.current_meeting;
+        }
+    },
+    
     meetingTimeElapsed: function(){},
     getMeetingMembers: function(){},
     endMeeting: function(){},
