@@ -15,12 +15,12 @@ var UI = {
     
     loadMeetings: function(options){
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
-            $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='#' target='_blank' data-transition='flip'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.meeting_name +"</p></a>");
+            $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='#' target='_blank' data-transition='flip'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.name +"</p></a>");
             $('#meeting-'+ meeting.id).bind('click', function(){API.connectMeeting(meeting);});
         });
         
         API.getMeetings({type: 'recent'}).forEach(function(meeting, i){
-           $('#quickconnect .tiles').append("<a id='meeting-"+ meeting.id +"' href='#' data-transition='flip'><p>"+ meeting.meeting_name +"</p></a>"); 
+           $('#quickconnect .tiles').append("<a id='meeting-"+ meeting.id +"' href='#' data-transition='flip'><p>"+ meeting.name +"</p></a>"); 
            $('#meeting-'+ meeting.id).bind('click', function(){API.connectMeeting(meeting);});
         });
     },
@@ -40,8 +40,19 @@ var UI = {
             $('#toast').fadeIn();
     },
     
-    connectMeeting: function(){},
-    updateMeetingTimeElapsed: function(){},
+    connectMeeting: function(meeting){
+        meeting.members.forEach(function(member, i){ 
+            $('#inmeeting .tiles').append("<a id='member-"+ member['id'] + "' href='http://external.com' data-type='" + member['name'] + "' class='" + member['type'] + "'><div style='background-image:url(" + member['photo'] + ")'><span class='control'></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
+        });
+        
+        $.mobile.changePage("#inmeeting", "none");
+        $('#inmeeting').addClass('pageSpinner');
+    },
+    
+    updateMeetingTimeElapsed: function(time){
+            $('.small-time').html('' + time['m'] + ':' + time['s']);
+    },
+    
     endMeeting: function(){},
     switchMeeting: function(){},
     newMeeting: function(){},

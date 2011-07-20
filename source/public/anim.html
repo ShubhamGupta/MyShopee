@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd"> 
+ 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>css3 Three Animations with One Transition</title> 
+  
+  <script src="js/jquery-1.6.1.min.js"></script>
+  <script type="text/javascript" charset="utf-8"> 
+
+	
+	// note: there is a single transition for Opacity while there is an animation
+	// doing all three translate, rotate and scaling.
+	
+	// all this is hardware accelerated on beagleboard
+	// this may not run well on your desktop chrome browser but runs at 11% cpu usage on
+	// beaglboard
+	
+  </script> 
+  <style type="text/css" media="screen"> 
+    body {
+      font-family: 'Lucida Grande', Verdana, Arial;
+      font-size: 12px;
+    }
+    
+ #parent {
+      margin: 10px;
+      width: 280px;
+      height: 280px;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: translateZ(0);
+      -webkit-transition: opacity 10.0s linear;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-iteration-count:1;	 
+      -webkit-animation-delay:0s;
+      -webkit-animation-duration: 10s;
+  	  -webkit-animation-timing-function: linear;
+      -webkit-animation-name: spin;
+    }
+   
+      @-webkit-keyframes spin {
+      from { 
+      		 -webkit-transform: translateX(0px) rotateY(0) scaleX(1);
+      		 }
+      to   { 
+      		 -webkit-transform: translateX(100px) rotateY(360deg) scaleX(2);
+      		 }
+    }
+    
+    #parent > div {
+      position: absolute;
+      top: 0px;                                         
+      left: 0px;            
+      width: 480px;         
+      height: 272px;        
+      padding: 10px;        
+      -webkit-box-sizing: border-box;
+      font-family: monospace;
+      font-size: 12pt;      
+    }                       
+      
+                            
+.overlapimages {            
+        position: absolute; 
+        top: 0px;           
+}         
+
+/************/
+.standardizer
+{
+	cursor:		none;
+	overflow:	hidden;
+	
+	padding:	0px 0px 0px 0px;
+	border:		0px 0px 0px 0px;
+	margin:		0px 0px 0px 0px;
+}
+
+
+
+
+
+/************/
+.led_off
+{
+   background: #FF0000;
+}
+ 
+  </style> 
+  
+
+</head> 
+<body> 
+ 
+
+    <div id="parent" > 
+		<div>ja chudel</div>
+    </div> 
+
+</body> 
+</html> 
