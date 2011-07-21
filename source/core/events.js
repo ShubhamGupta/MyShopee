@@ -1,11 +1,17 @@
 $(window).load(function (){
     // Functionality that needs to run on page load
+    Events.init.ui();
     Events.init.screenSaver();
     Events.init.meetings();
 });
 
 var Events = {
     init: {
+        ui: function(){
+           $('div[data-role="page"]').hide();
+           $('div[data-role="page"]').css('min-height', '378px');
+        },
+        
         screenSaver: function(){
             setInterval('UI.screenSaver(-1, API.screenSaver())', 1000);
             $('.header .time').bind('click', function(){UI.screenSaver(1, API.screenSaver());});

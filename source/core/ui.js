@@ -9,43 +9,53 @@ var UI = {
         $('.splash-time').html(date.format('h:MM'));
         $('.splash-date').html(date.format('ddd - mmm dd').replace(/-/g, "<span>&nbsp;</span>"))
         
-        if(display!= -1){display ? el.fadeIn() : el.fadeOut();}
+        if(display!= -1){display ? el.show() : el.hide();}
+    },
+    
+    showPage: function(page_id){
+        $('div[data-role="page"]').hide();
+        $(page_id).show();
+        $(page_id).addClass('ui-page');
     },
     
     
     loadMeetings: function(options){
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
-            $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='#' target='_blank' data-transition='flip'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.name +"</p></a>");
+            $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.name +"</p></a>");
             $('#meeting-'+ meeting.id).bind('click', function(){API.connectMeeting(meeting);});
         });
         
         API.getMeetings({type: 'recent'}).forEach(function(meeting, i){
-           $('#quickconnect .tiles').append("<a id='meeting-"+ meeting.id +"' href='#' data-transition='flip'><p>"+ meeting.name +"</p></a>"); 
+           $('#quickconnect .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><p>"+ meeting.name +"</p></a>"); 
            $('#meeting-'+ meeting.id).bind('click', function(){API.connectMeeting(meeting);});
         });
+        
+        this.showPage('#home-container');
     },
     
     processingPopup: function(display, options){
-            if(!display){$('#toast').fadeOut();return;}
+            if(!display){$('#toast').hide();return;}
             var message = options['message'];
             var toast_cancel = false;
             
             $('#toast h2').text( message );
             $('#cancel-toast').unbind('click tap').bind('click tap', function(){
-                $('#toast').fadeOut('fast');
+                $('#toast').hide('fast');
                 toast_cancel = true;
                 return false;
             })
 
-            $('#toast').fadeIn();
+            $('#toast').show();
     },
     
     connectMeeting: function(meeting){
         meeting.members.forEach(function(member, i){ 
-            $('#inmeeting .tiles').append("<a id='member-"+ member['id'] + "' href='http://external.com' data-type='" + member['name'] + "' class='" + member['type'] + "'><div style='background-image:url(" + member['photo'] + ")'><span class='control'></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
+            $('#inmeeting .tiles').append("<a id='member-"+ member['id'] + "' href='javascript:void(0);' data-type='" + member['name'] + "' class='" + member['type'] + "'><div style='background-image:url(" + member['photo'] + ")'><span class='control'></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
         });
         
-        $.mobile.changePage("#inmeeting", "none");
+        $('#inmeeting h1').text(meeting['name']);
+        
+        this.showPage("#inmeeting");
         $('#inmeeting').addClass('pageSpinner');
     },
     
