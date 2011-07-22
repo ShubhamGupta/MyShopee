@@ -11,7 +11,7 @@ var sequenceAPI = {
         return Data['meetings'][type];
     },
     
-    connectMeeting: function(meeting){
+    connectMeeting: function(meeting){        
         this.currentMeeting(meeting);
         UI.processingPopup(1, {message: meeting.name});
         
