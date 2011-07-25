@@ -7,8 +7,13 @@ var sequenceAPI = {
     
     getMeetings: function(options){
         var type = options['type'];
+        var meetings = new Array();
         
-        return Data['meetings'][type];
+        Data['meetings'].forEach(function(meeting, i){
+            if(meeting['type'] == type){meetings.push(meeting);}
+        })
+        
+        return meetings;
     },
     
     connectMeeting: function(meeting){        
@@ -51,23 +56,72 @@ var sequenceAPI = {
     
     getMeetingMembers: function(meeting){
         if(!meeting){meeting = this.currentMeeting();}
-        return meeting.members();
+        return meeting.members;
     },
     
     endMeeting: function(){
         this.meetingTimeElapsed(0)
         
     },
-    getMeeting: function(){},
+    
+    muteMember: function(member){
+        var canMute = this.canMuteMember(member);
+        member = this.updateMember(member, {if_muted: canMute});
+        UI.muteMember(member, canMute);
+    },
+    
+    canMuteMember: function(member){
+        return member['if_muted'] != 1 ? 1 : 0;
+    },
+    
+    updateMember: function(member, attribs){
+        var meeting_index = 0;
+        var current_meeting_id = this.currentMeeting()['id'];
+        Data.meetings.forEach(function(meeting, i){
+            if(current_meeting_id == meeting['id']){meeting_index = i;}
+        });
+        
+        this.getMeetingMembers().forEach(function(current_member, i){
+            if(current_member['id'] == member['id']){
+                for(var key in attribs){
+                    Data.meetings[meeting_index].members[i][key] = attribs[key];
+                }
+                member = Data.meetings[meeting_index].members[i];
+            }
+        });
+        return member;
+    },
+    
+    pinMember: function(member){
+        if(this.canPinMember(member)){
+            UI.pinMember(member, 1);
+            Global.currently_pinned = member;
+        }
+    },
+    
+    canPinMember: function(member){
+        if(Global.currently_pinned != 0){
+            UI.pinMember(Global.currently_pinned, 0);
+            
+            if(Global.currently_pinned['id'] == member['id']){
+                Global.currently_pinned = 0; 
+                return false;
+            }
+        }
+        
+        if(member['type'] == 'phone'){return false;}
+        
+        return true;
+    },
+    
     updateMeeting: function(){},
+    
+    getMeeting: function(){},
     updateCurrentMeeting: function(){},
-    updateMember: function(){},
+
     randomNameForMeeting: function(){},
     createMeeting: function(){},
     getMember: function(){},
-    muteMember: function(){},
-    canMuteMember: function(){},
-    pinMember: function(){},
-    canPinMember: function(){},
+    
     muteMemberCamera: function(){}
 }

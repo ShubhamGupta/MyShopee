@@ -64,6 +64,16 @@ var UI = {
     connectMeeting: function(meeting){
         meeting.members.forEach(function(member, i){ 
             $('#inmeeting .tiles').append("<a id='member-"+ member['id'] + "' href='javascript:void(0);' data-type='" + member['name'] + "' class='" + member['type'] + "'><div style='background-image:url(" + member['photo'] + ")'><span class='control'></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
+            
+            $('#member-'+ member['id']).bind('click tap', function(event){
+               API.pinMember(member);
+            });
+            
+            $('#member-'+ member['id']+' .control').bind('click tap', function(event){
+                API.muteMember(member);
+                event.preventDefault();
+                return false;
+            });
         });
         
         $('#inmeeting h1').text(meeting['name']);
@@ -76,12 +86,32 @@ var UI = {
             $('.small-time').html('' + time['m'] + ':' + time['s']);
     },
     
+    muteMember: function(member, state){
+        var memberMuteControlEl = $("#member-"+ member['id'] +" .control");
+        
+        if(state){
+            memberMuteControlEl.addClass('selected');
+        }else{
+            memberMuteControlEl.removeClass('selected');
+        }
+    },
+    
+    pinMember: function(member, state){
+        var memberEl = $("#member-"+ member['id']);
+        
+        if(state){
+            memberEl.addClass('selected');
+        }else{
+            memberEl.removeClass('selected');
+        }
+    },
+    
     endMeeting: function(){},
     switchMeeting: function(){},
     newMeeting: function(){},
     newPhoneCall: function(){},
-    muteMember: function(){},
-    pinMember: function(){},
+    
+    
     memberCameraSettings: function(){},
     muteMemberCamera: function(){}
 
