@@ -22,13 +22,15 @@ var UI = {
     loadMeetings: function(options){
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
             $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.name +"</p></a>");
-            $('#meeting-'+ meeting.id).dblclick(function(){
+            /*
+            $('#meeting-'+ meeting.id).bind('click tap', function(){
                 // Temp hack to prevent meeting connect
                 // Need more stable method
-                if(Global.if_scrolling == 1){Global.if_scrolling = 0;}else{
-                    //API.connectMeeting(meeting);
-                }
+                
+                //API.connectMeeting(meeting);
+                
             });
+            */
         });
         
         API.getMeetings({type: 'recent'}).forEach(function(meeting, i){

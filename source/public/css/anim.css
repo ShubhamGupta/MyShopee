@@ -1,4 +1,4 @@
- .pageSpinner {
+    .pageSpinner {
       -webkit-transform-style: preserve-3d;
       -webkit-transform: translateZ(0);
       -webkit-transition: opacity 10.0s linear;
@@ -17,4 +17,9 @@
       to   { 
       		 -webkit-transform:  rotateY(360deg);
       		 }
+    }
+    .preserve3d {
+        -webkit-transform-style:preserve-3d; 
+        -webkit-perspective:900; 
+        -webkit-transform:translateZ(0)
     }
