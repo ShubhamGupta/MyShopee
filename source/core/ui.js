@@ -65,7 +65,13 @@ var UI = {
     
     connectMeeting: function(meeting){
         meeting.members.forEach(function(member, i){ 
-            $('#inmeeting .tiles').append("<a id='member-"+ member['id'] + "' href='javascript:void(0);' data-type='" + member['name'] + "' class='" + member['type'] + "'><div style='background-image:url(" + member['photo'] + ")'><span class='control'></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
+            $('#inmeeting .tiles').append(
+                "<a id='member-"+ member['id'] + 
+                "' href='javascript:void(0);' data-type='" + member['name'] + 
+                "' class='" + member['type'] + (member['type'] == 'room' ? " current " : "") +
+                "'><div style='background-image:url(" + member['photo'] + 
+                ")'><span class='"+
+                (member['type'] == 'room' ? "settings" : "control") +" '></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
             
             $('#member-'+ member['id']).bind('click tap', function(event){
                API.pinMember(member);
@@ -73,6 +79,12 @@ var UI = {
             
             $('#member-'+ member['id']+' .control').bind('click tap', function(event){
                 API.muteMember(member);
+                event.preventDefault();
+                return false;
+            });
+            
+            $('#member-'+ member['id']+' .settings').bind('click tap', function(event){
+                API.cameraSettings(member);
                 event.preventDefault();
                 return false;
             });
@@ -106,6 +118,15 @@ var UI = {
         }else{
             memberEl.removeClass('selected');
         }
+    },
+    
+    cameraSettings: function(meeting){
+        this.showPage('#adjustcamera');
+    },
+    
+    muteCamera: function(state){
+        var contentEl = $("#adjustcamera .ui-content");
+        state ? contentEl.addClass("hidden") : contentEl.removeClass("hidden");
     },
     
     endMeeting: function(){},
