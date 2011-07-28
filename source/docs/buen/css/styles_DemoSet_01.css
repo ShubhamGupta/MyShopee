@@ -1,0 +1,87 @@
+/************/
+/*
+ 	As far as I can tell, you can only have ONE animation running on a object, but
+ 	can animate MULTIPLE animatable properties.
+ 	
+ 	Furthermore, if you want to make any changes to the animation settings below,
+ 	you would REPLACE this RULE in an element's RULES LIST.
+*/
+/*.ds01_CurrentAnimation*/
+#ds01_TestSprite01
+{
+	/***  STARTING STATES  ***/
+	position:							absolute;
+	top:								0px;
+	left:								0px;
+	visibility:							visible;
+/*	opacity:							0.50;		*/
+	z-index:							7;							/*  (Drawn in the back of buttons.) */
+	/************************/
+	
+	
+	/***  DIAGNOSTICS  ***/
+/*	-webkit-transform: 					rotate3d(1,0,0, 120deg);	/* 180 deg WORKS to HIDE the div by facing it AWAY. */
+	
+/* 	-webkit-transform-style:			preserve-3d; */
+/* 	-webkit-perspective:				100; */
+/* 	-webkit-animation: 					spin 3.3s infinite linear;	 */
+	
+/*	-webkit-backface-visibility:		hidden;						/*	Doesn't seem to work when it comes to hiding.  On Chrome, it's visible all the time, but on Beagle, it's just now shown.
+	/*********************/
+	
+	
+	/***  MAIN STYLE SETTINGS  ***/
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+		
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	infinite;
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		4.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			ds01_Keyframes_Translations;
+	/*****************************/
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+.ds01_KeyframeAnim_Rotations
+{
+	/***  MAIN STYLE SETTINGS  ***/
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+	
+	-webkit-transform-origin-x:			100px;
+	
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	infinite;
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		2.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			ds01_Keyframes_Rotations;
+	/*****************************/
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds01_Keyframes_Translations
+{
+	from { -webkit-transform: translate3d(-240px,120px,0px); }
+	to   { -webkit-transform: translate3d(540px,120px,0px); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds01_Keyframes_Rotations
+{
+	from { -webkit-transform: rotateX(0deg)  rotateY(0deg)  rotateZ(0deg); }
+	to   { -webkit-transform: rotateX(360deg)  rotateY(360deg)  rotateZ(360deg); }
+}

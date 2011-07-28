@@ -15,7 +15,6 @@ var UI = {
     showPage: function(page_id){
         $('div[data-role="page"]').hide();
         $(page_id).show();
-        $(page_id).addClass('ui-page');
     },
     
     

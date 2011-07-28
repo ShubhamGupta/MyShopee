@@ -1,0 +1,231 @@
+/******  (TRANSITION - FADE IN)  ******/
+/*	-webkit-transition:					top  1.0s  linear;	*/
+/*	top:								100px;				*/
+.fadeIn_Transition_DemoLayout
+{
+	/***  As mentioned previously, our tests currently indicate	***/
+	/***  that the Beagleboard does NOT seem to be able to		***/
+	/***  animate more than one property at a time.				***/
+/*	-webkit-transform-style:			preserve-3d;		*/
+/*	-webkit-transition-property:		opacity, left;		*/
+/*	-webkit-transition-duration:		1.0s, 1.0s;			*/
+/*	-webkit-transition-timing-function:	ease-out, ease-out;	*/
+	/**************************************************************/
+	
+	-webkit-transform-style:			preserve-3d;
+	-webkit-transition: 				opacity 1.0s linear;
+}
+
+
+
+
+/******  (TRANSITION - FADE OUT)  ******/
+.fadeOut_Transition_DemoLayout
+{
+	/***  As mentioned previously, our tests currently indicate	***/
+	/***  that the Beagleboard does NOT seem to be able to		***/
+	/***  animate more than one property at a time.				***/
+/*	-webkit-transform-style:			preserve-3d;		*/
+/*	-webkit-transition-property:		opacity, left;		*/
+/*	-webkit-transition-duration:		1.0s, 1.0s;			*/
+/*	-webkit-transition-timing-function:	ease-out, ease-out;	*/
+	/**************************************************************/
+	
+	-webkit-transform-style:			preserve-3d;
+	-webkit-transition: 				opacity 1.0s linear;
+}
+
+
+
+
+/******  [NOT USED] (TRANSITION - SLIDE IN)  ******/
+.slideIn_Transition_DemoLayout
+{
+	-webkit-transform-style:			preserve-3d;
+	-webkit-transition: 				left 1.0s linear;
+}
+
+
+
+
+/******  [NOT USED] (TRANSITION - SLIDE OUT)  ******/
+.slideOut_Transition_DemoLayout
+{
+	-webkit-transform-style:			preserve-3d;
+	-webkit-transition: 				left 1.0s linear;
+}
+
+
+
+
+/******  (ANIMATION)  ******/
+.switchIn_Animation_DemoLayout
+{
+/*	visibility:							hidden;		*/
+	
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+	
+	-webkit-transform-origin-x:			240px;			/*	To CENTER the axis of rotation. */
+	
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	1;
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		1.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			keyframes_SwitchIn_A;
+	
+/*	-webkit-transform-style:	preserve-3d;
+	-webkit-transform: 			translateZ(0);
+	-webkit-perspective:		5000;
+	-webkit-animation: 			spin 2.3s 1 linear;	*/
+	
+	-webkit-backface-visibility:		hidden;
+	z-index:							0;
+	display:							block;
+}
+
+
+
+
+/******  (ANIMATION)  ******/
+.switchOut_Animation_DemoLayout
+{
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+	
+	-webkit-transform-origin-x:			240px;			/*	To CENTER the axis of rotation. */
+	
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	1;	 
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		1.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			keyframes_SwitchOut_A;
+	
+	-webkit-backface-visibility:		hidden;
+	z-index:							1;
+	display:							block;
+}
+
+
+
+
+/************/
+@-webkit-keyframes	keyframes_SwitchIn_A
+{
+	/***	[AVOID USING OPACITY IN ANIMATION]  The test below shows that trying to animate	***/
+	/***	the opacity property using keyframe animation does NOT work.					***/
+/*	from	{	opacity:		0.2;  -webkit-transform:		rotateY(0);	}	*/
+/*	to		{	opacity:		1.0;  -webkit-transform:		rotateY(0);	}	*/
+	/******************************************************************************************/
+	
+	
+	from
+	{
+		-webkit-transform:		rotateY(180deg);
+	}
+	to
+	{
+		-webkit-transform:		rotateY(360deg);
+	}
+}
+
+
+
+
+/************/
+@-webkit-keyframes  keyframes_SwitchOut_A
+{
+	from
+	{
+		-webkit-transform:		rotateY(0deg);
+	}
+	to
+	{
+		-webkit-transform:		rotateY(180deg);
+	}
+}
+
+
+
+
+/************/
+@-webkit-keyframes	keyframes_SwitchIn_B
+{
+	0%
+	{
+		visibility:				hidden;
+		/*display:				none;*/
+		-webkit-transform:		rotateY(180deg);
+	}
+	
+	
+	50%
+	{
+		/*	At this point, the hiding of the div causes the animation to become
+			jerky.  I suspect the reason behind this is the redraw speed of the
+			Beagleboard, and when a div is told to be not visible, the screen is
+			caused to be redrawn.	*/
+		visibility:				hidden;
+		/*display:				none;*/
+		-webkit-transform:		rotateY(270deg);
+	}
+	
+	
+	100%
+	{
+		visibility:				visible;
+		/*display					inline;*/
+		-webkit-transform:		rotateY(360deg);
+	}
+}
+
+
+
+
+/************/
+@-webkit-keyframes  keyframes_SwitchOut_B
+{
+	0%
+	{
+		/*-webkit-transform:		rotateY(0deg)  translateX(0px);*/
+		
+		visibility:				visible;
+		/*display:				inline;*/
+		-webkit-transform:		rotateY(0deg);
+	}
+	
+	
+	50%
+	{
+		/*	At this point, the showing of the div causes the animation to become
+			jerky.  I suspect the reason behind this is the redraw speed of the
+			Beagleboard, and when a div is told to become visible, the screen is
+			caused to be redrawn.	*/
+		visibility:				hidden;
+		/*display:				none;*/
+		-webkit-transform:		rotateY(90deg);
+	}
+
+
+	100%
+	{
+		visibility:				hidden;
+		/*display:				none;*/
+		-webkit-transform:		rotateY(180deg);
+	}
+}
+
+
+
+
+/************/
+/*
+.class_DemoLayout:hover
+{
+	opacity:					0.00;
+}
+*/

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd"> 
+ 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Explaining transform-style</title> 
+  <style type="text/css" media="screen"> 
+    body {
+      font-family: 'Lucida Grande', Verdana, Arial;
+      font-size: 12px;
+    }
+    
+
+ #parent {
+      margin: 10px;
+      width: 280px;
+      height: 280px;
+      //background-color: #84FFCA;
+      -webkit-transform-style: preserve-3d;
+      -webkit-animation: spin 10s infinite linear;
+    }
+    
+    #container:hover #parent {
+      -webkit-transform-style: flat;
+    }
+    
+    @-webkit-keyframes spin {
+      from { -webkit-transform: rotateY(0); }
+      to   { -webkit-transform: rotateY(360deg); }
+    }
+    
+    #parent > div {
+      position: absolute;
+      top: 0px;                                         
+      left: 0px;            
+      width: 480px;         
+      height: 272px;        
+      padding: 10px;        
+      -webkit-box-sizing: border-box;
+      font-family: monospace;
+      font-size: 12pt;      
+    }                       
+
+ #parent > :first-child {
+      background-color: #49DC93;
+      -webkit-transform: translateZ(-100px) rotateY(45deg);
+    }                       
+                            
+    #parent > :last-child { 
+      background-color: #FF6;
+      -webkit-transform: translateZ(50px) rotateX(20deg);
+      -webkit-transform-origin: 50% top;
+    }                       
+                            
+                            
+                            
+.overlapimages {            
+        position: absolute; 
+        top: 0px;           
+}         
+
+ .led_on
+{
+   background: #00FF00;
+}
+/************/
+.standardizer
+{
+	cursor:		none;
+	overflow:	hidden;
+	
+	padding:	0px 0px 0px 0px;
+	border:		0px 0px 0px 0px;
+	margin:		0px 0px 0px 0px;
+}
+
+
+
+
+
+/************/
+.led_off
+{
+   background: #FF0000;
+}
+ 
+  </style> 
+  <script type="text/javascript" charset="utf-8"> 
+ 
+  </script> 
+</head> 
+<body  class="standardizer"  width="480px" height="272px" style="background-color:#FF0000"> 
+ 
+  <div id="container"> 
+    <div id="parent"> 
+       <img class="overlapimages" src="./images/_forDemo1.png" /> 
+    </div> 
+  </div> 
+</body> 
+</html> 

@@ -479,6 +479,14 @@ h1{
     width:480px !important;
     height:272px !important;
     min-height:272px !important;
+    
+    position:							absolute;
+    top:                                                        0px;
+    left:							0px;
+    z-index:							0;
+    opacity:							1.00;
+    display:							none;
+	
 }
 .ui-body-c, .ui-body-c .ui-link, a{
     text-shadow:none;

@@ -1,0 +1,154 @@
+/************/
+.ds02_KeyframeAnim_Rotations
+{
+	/***  MAIN STYLE SETTINGS  ***/
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+	
+	-webkit-transform-origin-x:			100px;
+	
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	infinite;
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		16.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			ds02_Keyframes_Rotations_ForBackfaceTest;						/* Default setting only ... will be changed via inline HTML. */
+	/*****************************/
+}
+
+
+
+
+/************/
+.ds02_ZSwitch
+{
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	infinite;
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		8.0s;		/* MATCH this with the rotation's duration of ".ds02_KeyframeAnim_Rotations". */
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			ds02_Keyframes_Rotations_ForBackfaceTest_StartInFront_ZSwitch;	/* Default setting only ... will be changed via inline HTML. */
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest
+{
+	from { -webkit-transform: rotateY(0deg); }
+	to   { -webkit-transform: rotateY(360deg); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartVisible
+{
+	from { -webkit-transform: rotateY(0deg); }
+	to   { -webkit-transform: rotateY(360deg); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartInvisible
+{
+	from { -webkit-transform: rotateY(180deg); }
+	to   { -webkit-transform: rotateY(540deg); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartInFront_ZSwitch
+{
+	0%		{ z-index:10000; }
+	100%	{ z-index:1; }
+
+/* 	0%		{ opacity:1; } */		/* Consider using an opacity trick for another sprite. */
+/*  50%		{ opacity:0; } */
+/* 	100%	{ opacity:0; } */
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartFromBehind_ZSwitch
+{
+	0%		{ z-index:1200		}
+	100%	{ z-index:10000;	}
+
+/* 	0%		{ opacity:0; } */		/* Consider using an opacity trick for another sprite. */
+/*  50%		{ opacity:1; } */
+/* 	100%	{ opacity:1; } */
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_For2Revs
+{
+	from { -webkit-transform: rotateY(0deg); }
+	to   { -webkit-transform: rotateY(720deg); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartVisible_For2Revs
+{
+	from { -webkit-transform: rotateY(0deg); }
+	to   { -webkit-transform: rotateY(720deg); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartInvisible_For2Revs
+{
+	from { -webkit-transform: rotateY(180deg); }
+	to   { -webkit-transform: rotateY(900deg); }
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartInFront_ZSwitch_For2Revs
+{
+/* 	0%		{ z-index:10000;	} */
+/* 	50%		{ z-index:1;		} */
+/* 	100%	{ z-index:10000;	} */
+	
+	0%		{ z-index:10000;	}
+	23%		{ z-index:4999;		}
+	50%		{ z-index:1;		}
+	73%		{ z-index:5000;		}
+	100%	{ z-index:10000;	}
+}
+
+
+
+
+/******  (DIAGNOSTIC)  ******/
+@-webkit-keyframes	ds02_Keyframes_Rotations_ForBackfaceTest_StartFromBehind_ZSwitch_For2Revs
+{
+/* 	0%		{ z-index:2800;		} */
+/* 	50%		{ z-index:10000;	} */
+/* 	100%	{ z-index:-3200;	} */
+
+	0%		{ z-index:1			}
+	23%		{ z-index:5000;		}
+	50%		{ z-index:10000;	}
+	73%		{ z-index:4999;		}
+	100%	{ z-index:1;		}
+}

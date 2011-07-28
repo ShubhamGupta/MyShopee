@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- info from url=(0067)http://www.webkit.org/blog-files/3d-transforms/transform-style.html -->
+
+<html lang="en">
+
+<head>
+	<title>Sequence Prototype</title>
+	
+	<!--  INITIALIZE BROWSER SETTINGS  --> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta contents="viewport" value="width=device-width, target-densitydpi=device-dpi, maximum-scale=1">
+	
+	<!--  LOAD JQUERY MOBILE COMPONENTS  -->
+<!--	<link rel="stylesheet" href="css/jquery.mobile-1.0b1.min.css" />	BROKEN = DISABLES ACCELERATION  -->
+	<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<!--	<script type="text/javascript" src="js/jquery.mobile-1.0b1.min.js"></script>	JQM = SUCKAGE		-->
+	
+	<!--  LINK APP CSS -->
+	<link  rel="stylesheet"  type="text/css"  href="css/main_Accelerated.css"/>
+	<link  rel="stylesheet"  type="text/css"  href="css/dynamicallyApplied.css"/>
+	<link  rel="stylesheet"  type="text/css"  href="css/styles_DemoSet_01.css"/>
+	<link  rel="stylesheet"  type="text/css"  href="css/styles_DemoSet_02.css"/>
+	<link  rel="stylesheet"  type="text/css"  href="css/styles_DemoSet_03.css"/>
+	<link  rel="stylesheet"  type="text/css"  href="css/styles_DemoSet_04.css"/>
+	<link  rel="stylesheet"  type="text/css"  href="css/styles_DemoSet_05.css"/>
+	
+	<!--  LOAD APP JS SCRIPTS  -->
+	<script type="text/javascript" src="js/initialize_Accelerated.js"></script>
+	<script type="text/javascript" src="js/userEvents_General.js"></script>
+	<script type="text/javascript" src="js/customTransitions_Accelerated.js"></script>
+	<script type="text/javascript" src="js/warpDrive_CSSAnimationKeyframes.js"></script>
+	<script type="text/javascript" src="js/warpDrive_CSSAnimationFunctions.js"></script>
+	<script type="text/javascript" src="js/functions_DemoSet01.js"></script>
+	<script type="text/javascript" src="js/functions_DemoSet02.js"></script>
+	<script type="text/javascript" src="js/functions_DemoSet03.js"></script>
+	<script type="text/javascript" src="js/functions_DemoSet04.js"></script>
+	<script type="text/javascript" src="js/functions_DemoSet05.js"></script>
+	
+</head>
+
+<body onload="initializer_onload()">
+
+<!--	<div id="touchHarnessPage"  data-role="page">	-->
+<div id="touchHarnessPage">
+<div id="jqm-homeheader">
+
+  	<!--  MAIN MENU  -->
+  
+  	<div  id="buttons_MainDirectory"  style="position:absolute; top:0px; left:0px; z-index:100">
+  		<img  id="button_DemoSet01"  style="position:absolute; top:0px; left:0px; height:90px; width:90px"  src="images/buttons/circular/90x90_Blue_off.png"/>
+  		<img  id="button_DemoSet02"  style="position:absolute; top:0px; left:95px; height:90px; width:90px"  src="images/buttons/circular/90x90_Brown_off.png"/>
+  		<img  id="button_DemoSet03"  style="position:absolute; top:0px; left:191px; height:90px; width:90px"  src="images/buttons/circular/90x90_Red_off.png"/>
+  		<img  id="button_DemoSet04"  style="position:absolute; top:0px; left:287px; height:90px; width:90px"  src="images/buttons/circular/90x90_Green_off.png"/>
+  		<img  id="button_DemoSet05"  style="position:absolute; top:0px; left:383px; height:90px; width:90px"  src="images/buttons/circular/90x90_Orange_off.png"/>
+  	</div>
+
+  	
+    <!--  DEMO 01 LAYOUT (Flipping)  -->
+<!--<div  id="layout_DemoSet01"  class="class_DemoLayout"  style="bottom:100px">-->
+	<div>
+    <div  id="layout_DemoSet01"  class="class_DemoLayout">
+    
+    	<!--  Demo 01 (Controls Div)  -->
+    	<div  id="ds01_ControlsDiv"  class="class_ControlsDiv">
+			<img  id="ds01_Control01"  style="position:absolute; top:222px; left:0px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Blue.png"/>
+			<img  id="ds01_Control02"  style="position:absolute; top:222px; left:79px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Blue.png"/>
+			<img  id="ds01_Control03"  style="position:absolute; top:222px; left:159px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Blue.png"/>
+			<img  id="ds01_Control04"  style="position:absolute; top:222px; left:239px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Blue.png"/>
+			<img  id="ds01_Control05"  style="position:absolute; top:222px; left:319px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Blue.png"/>
+			<img  id="ds01_Control06"  style="position:absolute; top:222px; left:399px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Blue.png"/>
+		</div>
+			
+			<!--  BACKGROUND  -->
+	  		<div><img  id="ds01_img_Background"  src="images/misc/_forDemo1.png"  style="position:absolute; left:0px;  z-index:-1" /></div>
+			
+	  		<!--  TEST SPRITE 01 -->
+	  		<div  id="ds01_TestSprite01">
+	  		<div  id="ds01_TestSprite01_AnimLayer_RelRotations"  class="ds01_KeyframeAnim_Rotations">
+ 			<img  src="images/people/lisa_rogers-thumb.jpg"/>
+ 			</div>
+			</div>
+			
+			<!--  TEST SPRITE 02  -->
+	  		<div  id="ds01_TestSprite02">
+	  		<div  id="ds01_TestSprite02_AnimLayer_RelRotations"  class="ds01_KeyframeAnim_Rotations">
+ 			<img  src="images/icons/Blooper (2).png"/>
+ 			</div>
+			</div>
+		
+		<!--  Demo 01 (Animation Div) -->
+		<div  id="ds01_AnimationDiv">
+		</div>
+    </div>
+    </div>
+    
+	
+	<!--  DEMO 02 LAYOUT (Sliding)  -->
+    <div  id="layout_DemoSet02"  class="class_DemoLayout">
+    
+    	<!--  Demo 02 (Controls Div)  -->
+    	<div  id="ds02_ControlsDiv"  class="class_ControlsDiv">
+			<img  id="ds02_Control01"  style="position:absolute; top:222px; left:0px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Brown.png"/>
+			<img  id="ds02_Control02"  style="position:absolute; top:222px; left:79px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Brown.png"/>
+			<img  id="ds02_Control03"  style="position:absolute; top:222px; left:159px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Brown.png"/>
+			<img  id="ds02_Control04"  style="position:absolute; top:222px; left:239px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Brown.png"/>
+			<img  id="ds02_Control05"  style="position:absolute; top:222px; left:319px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Brown.png"/>
+			<img  id="ds02_Control06"  style="position:absolute; top:222px; left:399px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Brown.png"/>
+		</div>
+		
+		<!--  Demo 02 (Animation Div) -->
+		<div  id="ds02_AnimationDiv">
+			<img  id="ds02_img_Background"  src="images/backgrounds/orange.png" />
+		</div>
+    </div>
+	
+	
+	<!--  DEMO 03 LAYOUT ()  -->
+    <div  id="layout_DemoSet03"  class="class_DemoLayout">
+    
+    	<!--  Demo 03 (Controls Div)  -->
+    	<div  id="ds03_ControlsDiv"  class="class_ControlsDiv">
+			<img  id="ds03_Control01"  style="position:absolute; top:222px; left:0px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Red.png"/>
+			<img  id="ds03_Control02"  style="position:absolute; top:222px; left:79px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Red.png"/>
+			<img  id="ds03_Control03"  style="position:absolute; top:222px; left:159px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Red.png"/>
+			<img  id="ds03_Control04"  style="position:absolute; top:222px; left:239px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Red.png"/>
+			<img  id="ds03_Control05"  style="position:absolute; top:222px; left:319px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Red.png"/>
+			<img  id="ds03_Control06"  style="position:absolute; top:222px; left:399px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Red.png"/>
+		</div>
+		
+		<!--  Demo 03 (Animation Div) -->
+		<div  id="ds03_AnimationDiv">
+			<img  id="ds03_img_Background"  src="images/backgrounds/magenta.png" />
+		</div>
+    </div>
+	
+	
+	<!--  DEMO 04 LAYOUT ()  -->
+    <div  id="layout_DemoSet04"  class="class_DemoLayout">
+    
+    	<!--  Demo 04 (Controls Div)  -->
+    	<div  id="ds04_ControlsDiv"  class="class_ControlsDiv">
+			<img  id="ds04_Control01"  style="position:absolute; top:222px; left:0px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Green.png"/>
+			<img  id="ds04_Control02"  style="position:absolute; top:222px; left:79px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Green.png"/>
+			<img  id="ds04_Control03"  style="position:absolute; top:222px; left:159px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Green.png"/>
+			<img  id="ds04_Control04"  style="position:absolute; top:222px; left:239px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Green.png"/>
+			<img  id="ds04_Control05"  style="position:absolute; top:222px; left:319px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Green.png"/>
+			<img  id="ds04_Control06"  style="position:absolute; top:222px; left:399px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Green.png"/>
+		</div>
+		
+		<!--  Demo 04 (Animation Div) -->
+		<div  id="ds04_AnimationDiv">
+			<img  id="ds04_img_Background"  src="images/backgrounds/green.png" />
+		</div>
+    </div>
+	
+	
+	<!--  DEMO 05 LAYOUT ()  -->
+    <div  id="layout_DemoSet05"  class="class_DemoLayout">
+    
+    	<!--  Demo 05 (Controls Div)  -->
+    	<div  id="ds05_ControlsDiv"  class="class_ControlsDiv">
+			<img  id="ds05_Control01"  style="position:absolute; top:222px; left:0px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Orange.png"/>
+			<img  id="ds05_Control02"  style="position:absolute; top:222px; left:79px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Orange.png"/>
+			<img  id="ds05_Control03"  style="position:absolute; top:222px; left:159px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Orange.png"/>
+			<img  id="ds05_Control04"  style="position:absolute; top:222px; left:239px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Orange.png"/>
+			<img  id="ds05_Control05"  style="position:absolute; top:222px; left:319px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Orange.png"/>
+			<img  id="ds05_Control06"  style="position:absolute; top:222px; left:399px; height:50px; width:80px"  src="images/buttons/rectangular/80x50_Orange.png"/>
+		</div>
+		
+		<!--  Demo 05 (Animation Div) -->
+		<div  id="ds05_AnimationDiv">
+			<img  id="ds05_img_Background"  src="images/misc/test_screen_04.jpg" />
+		</div>
+    </div>
+	
+
+</div>
+</div>
+
+</body>
+</html>

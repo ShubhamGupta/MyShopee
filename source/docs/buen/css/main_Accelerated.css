@@ -1,0 +1,282 @@
+/************/
+body
+{
+	font-family:				'Lucida Grande', Verdana, Arial;
+	font-size:					12px;
+	
+	cursor:						none;
+	overflow:					hidden;
+	
+	width:						480px;
+	height:						272px;
+	
+	padding:					0px 0px 0px 0px;
+	border:						0px 0px 0px 0px;
+	margin:						0px 0px 0px 0px;
+	
+	background-color:			#000000;
+}
+
+
+
+
+/************/
+#touchHarnessPage
+{
+	position: 					absolute;
+	top:						0px;				/*	Adjust to see background color.  */
+	left:						0px;				/*	Adjust to see background color.  */
+	height:						272px;
+	width:						480px;
+	
+/*	background-color: 			#84FFCA;			*/
+	border:						0px 0px 0px 0px;
+	padding:					0px 0px 0px 0px;
+	margin:						0px 0px 0px 0px;
+	
+	cursor:						none;
+	overflow:					hidden;
+}
+
+
+
+
+/************/
+#jqm-homeheader
+{
+	position: 					absolute;
+	height:						272px;
+	width:						480px;
+	
+/*	background-color: 			#0000FF;	*/
+	border:						0px 0px 0px 0px;
+	padding:					0px 0px 0px 0px;
+	margin:						0px 0px 0px 0px;
+	
+	cursor:						none;
+	overflow:					hidden;
+}
+
+
+
+
+/************/
+.class_DemoLayout
+{
+	position:							absolute;
+	top:								0px;
+	left:								0px;
+/*	left:								480px;			/* Default position = offscreen. */
+	z-index:							0;
+	
+	opacity:							1.00;
+/*	visibility:							hidden;			*/
+	display:							none;
+		
+/*	-webkit-transform-origin-x:			240px;			/*	To CENTER the axis of rotation. */
+	
+/*	-webkit-transform: 					rotate3d(0,1,0, 92deg);		/* 92 deg WORKS to HIDE the div by facing it AWAY. */
+/*	-webkit-transform: 					rotate3d(0,1,0, 180deg);	/* 180 deg WORKS to HIDE the div by facing it AWAY. */
+/*	transform:							rotateY(180deg);			/* CSS 2D rotation. */
+/* 	-webkit-backface-visibility:		hidden; */
+	
+	/***  [TEST] Testing with a persistent transform OFFSETS.  ***/	
+/*	-webkit-transform-style:			preserve-3d;
+	-webkit-transform: 					rotate3d(0,0,1, 30deg)  translate(-100px);
+	-webkit-transform:					rotateZ(45deg);
+/*	transform: 							translate(-100px);	*/
+	/*************************************************************/
+	
+	
+	/***  [TEST] Give all the demo some perpetuating transform animation.  ***/
+/*	-webkit-transform-style:			preserve-3d;		*/
+/*	-webkit-transform: 					translateZ(0);		*/
+/*	-webkit-animation-fill-mode:		forwards;			*/
+/*	-webkit-animation-iteration-count:	infinite;			*/
+/*	-webkit-animation-delay:			0s;					*/
+/*	-webkit-animation-duration: 		1s;					*/
+/*	-webkit-animation-timing-function:	linear;				*/
+/*	-webkit-animation-name: 			spin;				*/
+	/*************************************************************************/
+	
+	
+	/***  [TEST] Misc.  ***/
+/*	-webkit-box-sizing:					border-box;			*/
+	/**********************/
+}
+
+
+
+
+/************/
+.class_ControlsDiv
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	z-index:					20;
+/*	z-index:					200;	*/
+}
+
+
+
+
+/************/
+#ds01_AnimationDiv
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	z-index:					10;							/*  (Drawn in the back of buttons.) */
+	margin:						0px;
+	
+/*	width:						280px;			*/
+/*	height:						280px;			*/
+
+/*	-webkit-perspective:		5000;
+	-webkit-transform-style:	preserve-3d;
+	-webkit-animation: 			spin 5.3s infinite linear;	*/
+}
+
+
+
+
+/************/
+#ds02_AnimationDiv
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	z-index:					10;							/*  (Drawn in the back of buttons.)	*/
+	margin:						0px;
+
+/*	-webkit-transform-style:	preserve-3d;				*/
+/*	-webkit-perspective:		500;						/*  0=isometric  */
+/*	-webkit-animation: 			spin 20.3s infinite linear;	*/
+
+}
+
+
+
+
+/************/
+#ds03_AnimationDiv
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	z-index:					10;							/*  (Drawn in the back of buttons.)	*/
+	margin:						0px;
+	
+/*	-webkit-transform-style:	preserve-3d;				*/
+/*	-webkit-perspective:		500;						/*  0=isometric  */
+/*	-webkit-animation: 			spin 20.3s infinite linear;	*/
+}
+
+
+
+
+/************/
+#ds04_AnimationDiv
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	z-index:					10;							/*  (Drawn in the back of buttons.)	*/
+	margin:						0px;
+	
+	-webkit-transform-style:	preserve-3d;
+/*	-webkit-perspective:		500;						/*  0=isometric  */
+/*	-webkit-animation: 			spin 20.3s infinite linear;	*/
+}
+
+
+
+
+/************/
+#ds05_AnimationDiv
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	z-index:					10;							/*  (Drawn in the back of buttons.)	*/
+	margin:						0px;
+	
+	-webkit-transform-style:	preserve-3d;
+/*	-webkit-perspective:		500;						/*  0=isometric  */
+/*	-webkit-animation: 			spin 20.3s infinite linear;	*/
+}
+
+
+
+
+/************/
+/*
+#container:hover #parent
+{
+	-webkit-transform-style: 	flat;
+}
+*/
+
+
+
+
+/************/
+@-webkit-keyframes spin
+{
+	from { -webkit-transform: rotateY(0deg)  	rotateX(0deg);		}
+	to   { -webkit-transform: rotateY(360deg)	rotateX(360deg);	}
+}
+
+
+
+
+/************/
+#parent > div
+{
+	position:					absolute;
+	top:						0px;
+	left:						0px;
+	width:						480px;
+	height:						272px;
+	padding:					0px;
+	-webkit-box-sizing:			border-box;
+	font-family:				monospace;
+	font-size:					12pt;
+}
+
+
+
+
+/******  (OPTIONAL)  ******/
+/*
+#touchHarness > :first-child
+{
+	background-color: 			#49DC93;
+	-webkit-transform:			translateZ(-100px) rotateY(45deg);
+}
+*/
+
+
+
+
+/******  (OPTIONAL)  ******/
+/*
+#touchHarness > :last-child
+{
+	background-color:			#FF6;
+	-webkit-transform:			translateZ(50px) rotateX(20deg);
+	-webkit-transform-origin:	50% top;
+}
+*/
+
+
+
+
+/************/
+.absoluteCorner
+{
+	position: 					absolute;
+	top: 						0px;
+	left:						0px;
+}

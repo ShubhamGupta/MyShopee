@@ -7,10 +7,7 @@ $(window).load(function (){
 
 var Events = {
     init: {
-        ui: function(){
-           $('div[data-role="page"]').hide();
-           $('div[data-role="page"]').css('min-height', '378px');
-        },
+        ui: function(){},
         
         screenSaver: function(){
             setInterval('UI.screenSaver(-1, API.screenSaver())', 1000);
