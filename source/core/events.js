@@ -28,6 +28,15 @@ var Events = {
                     return false;
                 }
             });
+            
+            $("#adjustcamera .btnDone").bind('click tap', function(){
+                $('#inmeeting').removeClass('pageSpinner');
+                UI.showPage("#inmeeting");
+            });
+            
+            $("#togglecamera").bind('click tap', function(){
+               API.muteCamera();
+            });
         }
     }
 }

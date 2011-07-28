@@ -22,8 +22,8 @@ var sequenceAPI = {
         
         setTimeout(function(){
             UI.processingPopup(0);
-            //API.meetingTimeElapsed(1);
-        }, 1000);
+            API.meetingTimeElapsed(1);
+        }, 2000);
         
         setTimeout(function(){
             UI.connectMeeting(meeting);
@@ -114,6 +114,15 @@ var sequenceAPI = {
         return true;
     },
     
+    cameraSettings: function(meeting){
+        UI.cameraSettings(meeting);
+    },
+    
+    muteCamera: function(){
+      Global.if_camera_muted = Global.if_camera_muted == 1 ? 0 : 1;
+      UI.muteCamera(Global.if_camera_muted);
+    },
+    
     updateMeeting: function(){},
     
     getMeeting: function(){},
@@ -122,6 +131,8 @@ var sequenceAPI = {
     randomNameForMeeting: function(){},
     createMeeting: function(){},
     getMember: function(){},
+    
+    
     
     muteMemberCamera: function(){}
 }
