@@ -1,3 +1,14 @@
+.mainWrapper {
+    position: absolute;
+    height: 272px;
+    width: 480px;
+    border: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    cursor: none;
+    overflow: hidden;    
+}
+
     .pageSpinner {
       -webkit-transform-style: preserve-3d;
       -webkit-transform: translateZ(0);
@@ -23,3 +34,83 @@
         -webkit-perspective:900; 
         -webkit-transform:translateZ(0)
     }
+    
+    
+.switchIn_Animation
+{	
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+	
+	-webkit-transform-origin-x:			240px;			/*	To CENTER the axis of rotation. */
+	
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	1;
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		1.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			keyframes_SwitchIn_A;	
+	-webkit-backface-visibility:		hidden;
+	z-index:							0;
+	display:							block;
+}
+
+
+
+
+/******  (ANIMATION)  ******/
+.switchOut_Animation
+{
+	-webkit-transform-style:			preserve-3d;
+	-webkit-perspective:				0;
+	-webkit-transform: 					translateZ(0);
+	
+	-webkit-transform-origin-x:			240px;			/*	To CENTER the axis of rotation. */
+	
+	-webkit-animation-fill-mode:		forwards;
+	-webkit-animation-iteration-count:	1;	 
+	-webkit-animation-delay:			0.0s;
+	-webkit-animation-duration: 		1.0s;
+	-webkit-animation-timing-function:	linear;
+	-webkit-animation-name: 			keyframes_SwitchOut_A;
+	
+	-webkit-backface-visibility:		hidden;
+	z-index:							1;
+	display:							block;
+}
+
+
+
+
+/************/
+@-webkit-keyframes	keyframes_SwitchIn_A
+{
+	/***	[AVOID USING OPACITY IN ANIMATION]  The test below shows that trying to animate	***/
+	/***	the opacity property using keyframe animation does NOT work.					***/
+/*	from	{	opacity:		0.2;  -webkit-transform:		rotateY(0);	}	*/
+/*	to		{	opacity:		1.0;  -webkit-transform:		rotateY(0);	}	*/
+	/******************************************************************************************/
+	
+	
+	from
+	{
+		-webkit-transform:		rotateY(180deg);
+	}
+	to
+	{
+		-webkit-transform:		rotateY(360deg);
+	}
+}
+
+
+@-webkit-keyframes  keyframes_SwitchOut_A
+{
+	from
+	{
+		-webkit-transform:		rotateY(0deg);
+	}
+	to
+	{
+		-webkit-transform:		rotateY(180deg);
+	}
+}

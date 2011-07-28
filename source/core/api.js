@@ -22,11 +22,11 @@ var sequenceAPI = {
         
         setTimeout(function(){
             UI.processingPopup(0);
-        }, 2000);
+            //API.meetingTimeElapsed(1);
+        }, 1000);
         
         setTimeout(function(){
             UI.connectMeeting(meeting);
-            API.meetingTimeElapsed(1);
         }, 2000); // Needs to be same timeout in order to run after fake delay
         
     },

@@ -12,11 +12,43 @@ var UI = {
         if(display!= -1){display ? el.show() : el.hide();}
     },
     
-    showPage: function(page_id){
-        $('div[data-role="page"]').hide();
-        $(page_id).show();
+    showPage: function(page_id, animate){
+        var active_page = $(page_id);
+        active_page.show();
+        if(Global.current_page != '' && animate == 1){
+            var current_page = $(Global.current_page);
+            
+            current_page.addClass('switchOut_Animation');
+            current_page.bind('webkitAnimationEnd', this.postAnimateOut);
+            
+            active_page.addClass('switchIn_Animation');
+            active_page.bind('webkitAnimationEnd', this.postAnimateIn);
+        }else if(Global.current_page != '' && animate != 1){
+            var current_page = $(Global.current_page);
+            current_page.hide();
+        }else{
+            // If there is no current page and we dont need animation
+            
+        }
+            
+        
+        Global.current_page = page_id;
     },
     
+    postAnimateIn: function(event){
+      var el = $(this);
+      el.unbind('webkitAnimationEnd', this.postAnimateIn);
+      el.removeClass('switchIn_Animation');
+      el.show();
+    },
+    
+    postAnimateOut: function(){
+      var el = $(this);
+      
+      el.unbind('webkitAnimationEnd', this.postAnimateOut);
+      el.removeClass('switchOut_Animation');
+      el.hide();
+    },
     
     loadMeetings: function(options){
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
@@ -34,7 +66,7 @@ var UI = {
         
         API.getMeetings({type: 'recent'}).forEach(function(meeting, i){
            $('#quickconnect .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><p>"+ meeting.name +"</p></a>"); 
-           $('#meeting-'+ meeting.id).dblclick(function(){
+           $('#meeting-'+ meeting.id).dblclick(function(event){
                 // Temp hack to prevent meeting connect
                 // Need more stable method
                 if(Global.if_scrolling == 1){Global.if_scrolling = 0;}else{
@@ -79,15 +111,14 @@ var UI = {
         
         $('#inmeeting h1').text(meeting['name']);
         
-        this.showPage("#inmeeting");
-        $('#inmeeting').addClass('pageSpinner');
+        this.showPage("#inmeeting", 1);
     },
     
     updateMeetingTimeElapsed: function(time){
             $('.small-time').html('' + time['m'] + ':' + time['s']);
     },
     
-    muteMember: function(member, state){
+    muteMember: function(member, state){  
         var memberMuteControlEl = $("#member-"+ member['id'] +" .control");
         
         if(state){

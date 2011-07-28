@@ -485,9 +485,13 @@ h1{
     left:							0px;
     z-index:							0;
     opacity:							1.00;
-    display:							none;
-	
+    
 }
+
+.hidden-pages {
+    display:							none;
+}
+
 .ui-body-c, .ui-body-c .ui-link, a{
     text-shadow:none;
     color:#ccc;

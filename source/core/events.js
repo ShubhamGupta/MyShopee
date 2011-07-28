@@ -7,7 +7,9 @@ $(window).load(function (){
 
 var Events = {
     init: {
-        ui: function(){},
+        ui: function(){
+            $('div[data-role="page"]').addClass("hidden-pages");
+        },
         
         screenSaver: function(){
             setInterval('UI.screenSaver(-1, API.screenSaver())', 1000);
