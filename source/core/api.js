@@ -21,13 +21,22 @@ var sequenceAPI = {
         UI.processingPopup(1, {message: meeting.name});
         
         setTimeout(function(){
-            UI.processingPopup(0);
-            API.meetingTimeElapsed(1);
-        }, 2000);
+            if(Global.if_processing_canceled == 0){
+                UI.processingPopup(0);
+                API.meetingTimeElapsed(1);
+            }
+            
+        }, 2500);
         
         setTimeout(function(){
-            UI.connectMeeting(meeting);
-        }, 2000); // Needs to be same timeout in order to run after fake delay
+            if(Global.if_processing_canceled == 0){
+                UI.connectMeeting(meeting);
+            }
+        }, 2500); // Needs to be same timeout in order to run after fake delay
+        
+        setTimeout(function(){
+            Mock.joinMember();
+        }, 10000);
         
     },
     
@@ -48,9 +57,10 @@ var sequenceAPI = {
         _seconds = Global.inmeetingTime % 60 < 10 ? '0' + Math.floor(Global.inmeetingTime % 60) : '' + Math.floor(Global.inmeetingTime % 60);
         _minutes = '' + Math.floor(Global.inmeetingTime / 60);
         UI.updateMeetingTimeElapsed({m: _minutes, s: _seconds})
-        if(status){setTimeout('API.meetingTimeElapsed(1)', 1000);}else{
+        if(status){Global.inmeetingTimer = setTimeout('API.meetingTimeElapsed(1)', 1000);}else{
             Global.inmeetingTime = 0;
-            UI.updateMeetingTimeElapsed({m: 0, s: 0})
+            UI.updateMeetingTimeElapsed({m: 0, s: 0});
+            clearTimeout(Global.inmeetingTimer);
         }
     },
     
@@ -60,8 +70,8 @@ var sequenceAPI = {
     },
     
     endMeeting: function(){
-        this.meetingTimeElapsed(0)
-        
+        this.meetingTimeElapsed(0);
+        UI.screenSaver(1, API.screenSaver());
     },
     
     muteMember: function(member){
@@ -90,6 +100,10 @@ var sequenceAPI = {
             }
         });
         return member;
+    },
+    
+    joinMember: function(member){
+        UI.joinMember(member);
     },
     
     pinMember: function(member){
@@ -123,13 +137,24 @@ var sequenceAPI = {
       UI.muteCamera(Global.if_camera_muted);
     },
     
+    randomNameForMeeting: function(){
+        return "mtg_name_123";
+    },
+    
+    createMeeting: function(){
+        var meeting = {id: Global.new_meeting_id, name: $("#home-newmeeting a").text(), members: Data.members()};
+        Data.meetings.push(meeting);
+        API.connectMeeting(meeting);
+        Global.new_meeting_id = Global.new_meeting_id + 1;
+    },
+    
     updateMeeting: function(){},
     
     getMeeting: function(){},
     updateCurrentMeeting: function(){},
 
-    randomNameForMeeting: function(){},
-    createMeeting: function(){},
+    
+    
     getMember: function(){},
     
     

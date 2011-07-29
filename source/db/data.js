@@ -7,7 +7,11 @@ var Data = {
 			{type: 'recent', id: 5, name: 'Recent 1', members: members()}, 
                         {type: 'recent', id: 6, name: 'Recent 2', members: members()}, 
                         {type: 'recent', id: 7, name: 'Recent 3', members: members()}
-	]        
+	],
+
+        members: function(){
+            return members();
+        }
 }
 
 function members(){

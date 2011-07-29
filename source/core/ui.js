@@ -53,15 +53,15 @@ var UI = {
     loadMeetings: function(options){
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
             $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.name +"</p></a>");
-            /*
-            $('#meeting-'+ meeting.id).bind('click tap', function(){
+            
+            $('#meeting-'+ meeting.id).dblclick(function(){
                 // Temp hack to prevent meeting connect
                 // Need more stable method
-                
-                //API.connectMeeting(meeting);
-                
+                if(Global.if_scrolling == 1){Global.if_scrolling = 0;}else{
+                    API.connectMeeting(meeting);
+                }
             });
-            */
+            
         });
         
         API.getMeetings({type: 'recent'}).forEach(function(meeting, i){
@@ -80,6 +80,7 @@ var UI = {
     },
     
     processingPopup: function(display, options){
+            if(display){Global.if_processing_canceled = 0;}
             if(!display){$('#toast').hide();return;}
             var message = options['message'];
             var toast_cancel = false;
@@ -88,6 +89,8 @@ var UI = {
             $('#cancel-toast').unbind('click tap').bind('click tap', function(){
                 $('#toast').hide('fast');
                 toast_cancel = true;
+                Global.if_processing_canceled = 1;
+                
                 return false;
             })
 
@@ -95,30 +98,9 @@ var UI = {
     },
     
     connectMeeting: function(meeting){
+        $('#inmeeting .tiles').html("");
         meeting.members.forEach(function(member, i){ 
-            $('#inmeeting .tiles').append(
-                "<a id='member-"+ member['id'] + 
-                "' href='javascript:void(0);' data-type='" + member['name'] + 
-                "' class='" + member['type'] + (member['type'] == 'room' ? " current " : "") +
-                "'><div style='background-image:url(" + member['photo'] + 
-                ")'><span class='"+
-                (member['type'] == 'room' ? "settings" : "control") +" '></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
-            
-            $('#member-'+ member['id']).bind('click tap', function(event){
-               API.pinMember(member);
-            });
-            
-            $('#member-'+ member['id']+' .control').bind('click tap', function(event){
-                API.muteMember(member);
-                event.preventDefault();
-                return false;
-            });
-            
-            $('#member-'+ member['id']+' .settings').bind('click tap', function(event){
-                API.cameraSettings(member);
-                event.preventDefault();
-                return false;
-            });
+            API.joinMember(member);
         });
         
         $('#inmeeting h1').text(meeting['name']);
@@ -128,6 +110,32 @@ var UI = {
     
     updateMeetingTimeElapsed: function(time){
             $('.small-time').html('' + time['m'] + ':' + time['s']);
+    },
+    
+    joinMember: function(member){
+        $('#inmeeting .tiles').append(
+            "<a id='member-"+ member['id'] + 
+            "' href='javascript:void(0);' data-type='" + member['name'] + 
+            "' class='" + member['type'] + (member['type'] == 'room' ? " current " : "") +
+            "'><div style='background-image:url(" + member['photo'] + 
+            ")'><span class='"+
+            (member['type'] == 'room' ? "settings" : "control") +" '></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
+
+        $('#member-'+ member['id']).bind('click tap', function(event){
+           API.pinMember(member);
+        });
+
+        $('#member-'+ member['id']+' .control').bind('click tap', function(event){
+            API.muteMember(member);
+            event.preventDefault();
+            return false;
+        });
+
+        $('#member-'+ member['id']+' .settings').bind('click tap', function(event){
+            API.cameraSettings(member);
+            event.preventDefault();
+            return false;
+        });
     },
     
     muteMember: function(member, state){  

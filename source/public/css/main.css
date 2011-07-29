@@ -74,6 +74,10 @@ h1{
     background-image:none;
 }
 
+#adjustcamera .ui-content.hidden img{
+    display:none;
+}
+
 .header{
     height:27px;
     padding:5px 15px 5px 10px;
@@ -391,12 +395,10 @@ h1{
     background: black;
 }
 .touch-to-enter{
-    width:330px;
-    height:25px;
-    background: transparent url(../images/main/buttons/home-touch-background.png) top left no-repeat;
-    margin:30px 0 0 70px;
-    padding:10px 0 0 0;
-    text-align:center;
+    width:450px;
+    height:45px;
+    background: transparent url(../images/popups/quick-meeting.png) 0 0 no-repeat;
+    padding:35px 0 0 30px;
     font-size:16px;
     font-weight:lighter;
     font-style:italic;

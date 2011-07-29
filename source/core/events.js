@@ -37,6 +37,9 @@ var Events = {
             $("#togglecamera").bind('click tap', function(){
                API.muteCamera();
             });
+            
+            $("#home-newmeeting a").text(API.randomNameForMeeting())
+            $("#home-newmeeting .touch-container").bind('click tap', API.createMeeting);
         }
     }
 }

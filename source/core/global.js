@@ -4,6 +4,9 @@ var Global = {
     current_page: '',
     current_event: null,
     inmeetingTime: 0,
+    inmeetingTimer: null,
+    new_meeting_id: 1,
+    if_processing_canceled: 0,
     if_scrolling: 0,
     if_camera_muted: 0
 }
