@@ -17,27 +17,22 @@ var sequenceAPI = {
     },
     
     connectMeeting: function(meeting){        
-        this.currentMeeting(meeting);
         UI.processingPopup(1, {message: meeting.name});
         
-        setTimeout(function(){
-            if(Global.if_processing_canceled == 0){
-                UI.processingPopup(0);
-                API.meetingTimeElapsed(1);
-            }
-            
-        }, 2500);
+        Mock.joinMeeting(meeting);
+
+    },
+    
+    joinMeeting: function(meeting){
+        this.currentMeeting(meeting);
         
-        setTimeout(function(){
-            if(Global.if_processing_canceled == 0){
-                UI.connectMeeting(meeting);
-            }
-        }, 2500); // Needs to be same timeout in order to run after fake delay
+        if(Global.if_processing_canceled == 0){
+            UI.processingPopup(0);
+            API.meetingTimeElapsed(1);
+            UI.connectMeeting(meeting);
+        }
         
-        setTimeout(function(){
-            Mock.joinMember();
-        }, 10000);
-        
+        Mock.joinMember();
     },
     
     // This method needs to be called to get the current meeting in session

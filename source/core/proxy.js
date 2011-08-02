@@ -5,5 +5,9 @@ var Proxy = {
     
     joinMember: function(member){
         API.joinMember(member);
+    },
+    
+    joinMeeting: function(meeting){
+        API.joinMeeting(meeting);
     }
 }
