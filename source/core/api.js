@@ -17,7 +17,7 @@ var sequenceAPI = {
     },
     
     connectMeeting: function(meeting){        
-        UI.processingPopup(1, {message: meeting.name});
+        UI.processingPopup(1, {message: meeting.name, title: "Now Joining.."});
         
         Mock.joinMeeting(meeting);
 
@@ -65,18 +65,31 @@ var sequenceAPI = {
     },
     
     endMeeting: function(){
+        UI.processingPopup(1, {message: "Please wait", title: "Ending meeting..", cancelCallback: this.cancelEndMeeting});
+        Mock.endMeeting();
+    },
+    
+    cancelEndMeeting: function(){
+        UI.processingPopup(0);
+    },
+    
+    meetingEnded: function(){
         this.meetingTimeElapsed(0);
+        UI.processingPopup(0);
         UI.screenSaver(1, API.screenSaver());
     },
     
     muteMember: function(member){
         var canMute = this.canMuteMember(member);
-        member = this.updateMember(member, {if_muted: canMute});
-        UI.muteMember(member, canMute);
+        Mock.muteMember(member, canMute);
     },
     
     canMuteMember: function(member){
         return member['if_muted'] != 1 ? 1 : 0;
+    },
+    
+    memberMuted: function(member, state){
+        UI.muteMember(member, state);
     },
     
     updateMember: function(member, attribs){
@@ -99,6 +112,10 @@ var sequenceAPI = {
     
     joinMember: function(member){
         UI.joinMember(member);
+    },
+    
+    exitMember: function(member){
+        UI.exitMember(member);
     },
     
     pinMember: function(member){

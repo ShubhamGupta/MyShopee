@@ -1,8 +1,14 @@
 var Mock = {
 	joinMember: function(){
+            var member = {id: 999, name: "Tin Tin", type: "phone", photo: "images/main/people/lisa_rogers.jpg"};
+            
             setTimeout(function(){
-                //console.log("Mock.joinMember");
-                Proxy.joinMember({id: 999, name: "Tin Tin", type: "phone", photo: "images/main/people/lisa_rogers.jpg"});
+                Proxy.joinMember(member);
+                
+                setTimeout(function(){
+                    Proxy.exitMember(member);
+                }, 10000);
+                
             }, 10000);
 	},
         
@@ -12,5 +18,19 @@ var Mock = {
                 Proxy.joinMeeting(meeting);
             }, 2500);
             
+        },
+        
+        endMeeting: function(){
+            setTimeout(function(){
+                if(Global.if_processing_canceled == 0 ){Proxy.meetingEnded();}
+            }, 4000);
+        },
+        
+        muteMember: function(member, canMute){
+            var member = Proxy.updateMember(member, {if_muted: canMute});
+            
+            setTimeout(function(){
+                Proxy.memberMuted(member, member['if_muted']);
+            }, 1000);
         }
 }

@@ -83,14 +83,19 @@ var UI = {
             if(display){Global.if_processing_canceled = 0;}
             if(!display){$('#toast').hide();return;}
             var message = options['message'];
+            var title = options['title'];
             var toast_cancel = false;
+            var cancelCallback = options['cancelCallback'];
             
+            if(title){$('#toast p').text( title );}
             $('#toast h2').text( message );
             $('#cancel-toast').unbind('click tap').bind('click tap', function(){
                 $('#toast').hide('fast');
                 toast_cancel = true;
                 Global.if_processing_canceled = 1;
-                
+                if(cancelCallback){
+                    cancelCallback();
+                }
                 return false;
             })
 
@@ -136,6 +141,10 @@ var UI = {
             event.preventDefault();
             return false;
         });
+    },
+    
+    exitMember: function(member){
+        $('#member-'+member['id']).remove();
     },
     
     muteMember: function(member, state){  
