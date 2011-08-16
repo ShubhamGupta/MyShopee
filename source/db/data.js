@@ -16,8 +16,8 @@ var Data = {
 
 function members(){
     return [
-       {id: 1, type: 'phone', name: 'Lisa Rogers', photo: 'images/main/people/lisa_rogers-thumb.jpg'},
-       {id: 2, type: 'user',  name: 'Tom Simmons', photo: 'images/main/people/tom_simmons-thumb.jpg'},
-       {id: 3, type: 'room',  name: 'Board Room',  photo: 'images/main/people/in_meeting-thumb.jpg' },
+       {jid: 'http://rhino04@logitech.com/gmail.994187DE1', type: 'phone', name: 'Lisa Rogers', photo: 'images/main/people/lisa_rogers-thumb.jpg'},
+       {jid: 'http://rhino04@logitech.com/gmail.994187DE2', type: 'user',  name: 'Tom Simmons', photo: 'images/main/people/tom_simmons-thumb.jpg'},
+       {jid: 'http://rhino04@logitech.com/gmail.994187DE3', type: 'room',  name: 'Board Room',  photo: 'images/main/people/in_meeting-thumb.jpg' },
     ]
 }

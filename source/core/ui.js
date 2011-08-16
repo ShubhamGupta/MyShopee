@@ -119,24 +119,24 @@ var UI = {
     
     joinMember: function(member){
         $('#inmeeting .tiles').append(
-            "<a id='member-"+ member['id'] + 
+            "<a id='member-"+ member['jid'] + 
             "' href='javascript:void(0);' data-type='" + member['name'] + 
             "' class='" + member['type'] + (member['type'] == 'room' ? " current " : "") +
             "'><div style='background-image:url(" + member['photo'] + 
             ")'><span class='"+
             (member['type'] == 'room' ? "settings" : "control") +" '></span><img src='images/main/tiles/highlight.png'></div><h3>"+ member['name'] +"</h3></a>");
 
-        $('#member-'+ member['id']).bind('click tap', function(event){
+        $('#member-'+ Util.escapeId(member['jid'])).bind('click tap', function(event){
            API.pinMember(member);
         });
 
-        $('#member-'+ member['id']+' .control').bind('click tap', function(event){
+        $('#member-'+ Util.escapeId(member['jid']) +' .control').bind('click tap', function(event){
             API.muteMember(member);
             event.preventDefault();
             return false;
         });
 
-        $('#member-'+ member['id']+' .settings').bind('click tap', function(event){
+        $('#member-'+ Util.escapeId(member['jid']) +' .settings').bind('click tap', function(event){
             API.cameraSettings(member);
             event.preventDefault();
             return false;
@@ -144,11 +144,11 @@ var UI = {
     },
     
     exitMember: function(member){
-        $('#member-'+member['id']).remove();
+        $('#member-'+Util.escapeId(member['jid'])).remove();
     },
     
     muteMember: function(member, state){  
-        var memberMuteControlEl = $("#member-"+ member['id'] +" .control");
+        var memberMuteControlEl = $("#member-"+ Util.escapeId(member['jid']) +" .control");
         
         if(state){
             memberMuteControlEl.addClass('selected');
@@ -158,7 +158,7 @@ var UI = {
     },
     
     pinMember: function(member, state){
-        var memberEl = $("#member-"+ member['id']);
+        var memberEl = $("#member-"+ Util.escapeId(member['jid']));
         
         if(state){
             memberEl.addClass('selected');

@@ -100,7 +100,7 @@ var sequenceAPI = {
         });
         
         this.getMeetingMembers().forEach(function(current_member, i){
-            if(current_member['id'] == member['id']){
+            if(current_member['jid'] == member['jid']){
                 for(var key in attribs){
                     Data.meetings[meeting_index].members[i][key] = attribs[key];
                 }
@@ -129,7 +129,7 @@ var sequenceAPI = {
         if(Global.currently_pinned != 0){
             UI.pinMember(Global.currently_pinned, 0);
             
-            if(Global.currently_pinned['id'] == member['id']){
+            if(Global.currently_pinned['jid'] == member['jid']){
                 Global.currently_pinned = 0; 
                 return false;
             }

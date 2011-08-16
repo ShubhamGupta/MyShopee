@@ -1,6 +1,6 @@
 var Mock = {
 	joinMember: function(){
-            var member = {id: 999, name: "Tin Tin", type: "phone", photo: "images/main/people/lisa_rogers.jpg"};
+            var member = {jid: 'http://rhino04@logitech.com/gmail.994187DE999', name: "Tin Tin", type: "phone", photo: "images/main/people/lisa_rogers.jpg"};
             
             setTimeout(function(){
                 Proxy.joinMember(member);
