@@ -13,9 +13,9 @@ var Mock = {
 	},
         
         joinMeeting: function(meeting){
-            //console.log("Mock.joinMeeting");
             setTimeout(function(){
                 Proxy.joinMeeting(meeting);
+                Proxy.currentMember({jid: 'http://rhino04@logitech.com/gmail.994187DE3'});
             }, 2500);
             
         },

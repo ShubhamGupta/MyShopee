@@ -5,3 +5,6 @@ var API   = {};
 
 //APIInstance.__proto__ = sequenceAPI;  // instance becomes the "this"
 API.__proto__ = sequenceAPI;  // instance becomes the "this"
+
+// Add helper methods to the loaded API
+for(var method in APIHelpers){API[method] = APIHelpers[method];}

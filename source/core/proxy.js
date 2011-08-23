@@ -21,7 +21,9 @@ var Proxy = {
     
     memberMuted: function(member, canMute){
         API.memberMuted(member, canMute);
-    }
+    },
     
-   
+    currentMember: function(member){
+        return API.currentMember(member);
+    }
 }

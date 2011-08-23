@@ -1,10 +1,5 @@
 var sequenceAPI = {
-    screenSaver: function(){
-        var options = {date: new Date()};
         
-        return options;
-    },
-    
     getMeetings: function(options){
         var type = options['type'];
         var meetings = new Array();
@@ -15,6 +10,7 @@ var sequenceAPI = {
         
         return meetings;
     },
+
     
     connectMeeting: function(meeting){        
         UI.processingPopup(1, {message: meeting.name, title: "Now Joining.."});
@@ -23,61 +19,24 @@ var sequenceAPI = {
 
     },
     
-    joinMeeting: function(meeting){
-        this.currentMeeting(meeting);
-        
-        if(Global.if_processing_canceled == 0){
-            UI.processingPopup(0);
-            API.meetingTimeElapsed(1);
-            UI.connectMeeting(meeting);
+    
+    
+    currentMember: function(member){
+        if(member){
+            Global.current_member = member;
         }
         
-        Mock.joinMember();
+        return Global.current_member;
     },
     
-    // This method needs to be called to get the current meeting in session
-    // This method is also used to assign a meeting to the current meeting var
-    // Do not use the Global variable directly
-    currentMeeting: function(meeting){
-        if(meeting){
-            Global.current_meeting = meeting;
-            return meeting;
-        }else{
-            return Global.current_meeting;
-        }
-    },
-    
-    meetingTimeElapsed: function(status){
-        Global.inmeetingTime++;
-        _seconds = Global.inmeetingTime % 60 < 10 ? '0' + Math.floor(Global.inmeetingTime % 60) : '' + Math.floor(Global.inmeetingTime % 60);
-        _minutes = '' + Math.floor(Global.inmeetingTime / 60);
-        UI.updateMeetingTimeElapsed({m: _minutes, s: _seconds})
-        if(status){Global.inmeetingTimer = setTimeout('API.meetingTimeElapsed(1)', 1000);}else{
-            Global.inmeetingTime = 0;
-            UI.updateMeetingTimeElapsed({m: 0, s: 0});
-            clearTimeout(Global.inmeetingTimer);
-        }
-    },
-    
-    getMeetingMembers: function(meeting){
-        if(!meeting){meeting = this.currentMeeting();}
-        return meeting.members;
-    },
-    
+        
     endMeeting: function(){
         UI.processingPopup(1, {message: "Please wait", title: "Ending meeting..", cancelCallback: this.cancelEndMeeting});
         Mock.endMeeting();
     },
     
-    cancelEndMeeting: function(){
-        UI.processingPopup(0);
-    },
     
-    meetingEnded: function(){
-        this.meetingTimeElapsed(0);
-        UI.processingPopup(0);
-        UI.screenSaver(1, API.screenSaver());
-    },
+    
     
     muteMember: function(member){
         var canMute = this.canMuteMember(member);
@@ -86,10 +45,6 @@ var sequenceAPI = {
     
     canMuteMember: function(member){
         return member['if_muted'] != 1 ? 1 : 0;
-    },
-    
-    memberMuted: function(member, state){
-        UI.muteMember(member, state);
     },
     
     updateMember: function(member, attribs){
@@ -108,14 +63,6 @@ var sequenceAPI = {
             }
         });
         return member;
-    },
-    
-    joinMember: function(member){
-        UI.joinMember(member);
-    },
-    
-    exitMember: function(member){
-        UI.exitMember(member);
     },
     
     pinMember: function(member){
@@ -140,9 +87,7 @@ var sequenceAPI = {
         return true;
     },
     
-    cameraSettings: function(meeting){
-        UI.cameraSettings(meeting);
-    },
+    
     
     muteCamera: function(){
       Global.if_camera_muted = Global.if_camera_muted == 1 ? 0 : 1;
@@ -153,12 +98,6 @@ var sequenceAPI = {
         return "mtg_name_123";
     },
     
-    createMeeting: function(){
-        var meeting = {id: Global.new_meeting_id, name: $("#home-newmeeting a").text(), members: Data.members()};
-        Data.meetings.push(meeting);
-        API.connectMeeting(meeting);
-        Global.new_meeting_id = Global.new_meeting_id + 1;
-    },
     
     updateMeeting: function(){},
     
