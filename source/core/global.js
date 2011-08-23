@@ -1,5 +1,6 @@
 var Global = {
     current_meeting: null,
+    upcoming_meeting: null,
     current_member: null,
     currently_pinned: 0,
     current_page: '',

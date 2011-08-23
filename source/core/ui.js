@@ -51,8 +51,13 @@ var UI = {
     },
     
     loadMeetings: function(options){
+        var current_time = new Date().getTime();
+        var lowest_diff = 0;
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
-            $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><h3>"+ meeting.start_at + ' - ' + meeting.end_at +"</h3><p>"+ meeting.name +"</p></a>");
+            var current_diff = Math.abs(current_time - meeting.start_at.getTime());
+            console.log("N:"+meeting.name+" D:"+current_diff);
+            if( current_diff < lowest_diff || lowest_diff == 0){Global.upcoming_meeting = meeting; lowest_diff = current_diff;}
+            $('#home .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><h3>"+ meeting.start_at.format('h:MM') + ' - ' + meeting.end_at.format('h:MM') +"</h3><p>"+ meeting.name +"</p></a>");
             
             $('#meeting-'+ meeting.id).dblclick(function(){
                 // Temp hack to prevent meeting connect
