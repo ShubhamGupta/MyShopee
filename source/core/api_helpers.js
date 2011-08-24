@@ -14,8 +14,6 @@ var APIHelpers = {
             API.meetingTimeElapsed(1);
             UI.connectMeeting(meeting);
         }
-        
-        Mock.joinMember();
     },
 
     // This method needs to be called to get the current meeting in session
@@ -78,6 +76,6 @@ var APIHelpers = {
     
     cameraSettings: function(meeting){
         UI.cameraSettings(meeting);
-    },
+    }
 
 }
