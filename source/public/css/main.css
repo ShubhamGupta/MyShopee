@@ -534,3 +534,8 @@ h1{
     margin-left:-10px;
     margin-right:3px;
 }
+
+
+/*----- New CSS created by Aks -----*/
+div.relative { position:relative; }
+div.relative input.abs { position:absolute; width:310px; border:none; top:63px; left:20px; background:transparent!important; }

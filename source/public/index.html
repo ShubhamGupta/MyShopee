@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="css/anim.css" type="text/css" />
     
         <link rel="stylesheet" href="css/main.css" type="text/css" />
+        
+        <link rel="stylesheet" href="css/keyboard.css" type="text/css" />
     </head>
     <body>
        <div class="mainWrapper" style="-webkit-transform-style:preserve-3d; -webkit-perspective:900; -webkit-transform:translateZ(0)">
@@ -36,11 +38,12 @@
                     </div>
                 </div>
                 
-                <div id="home-newmeeting" class="collapsible closed black">
+                <div id="home-newmeeting" class="collapsible closed black relative">
                     <h1>New Meeting</h1>
                     <div id="touch-container-1" class="touch-container">
-                        <p class="touch-to-enter"><a href="#newmeeting" data-transition='slideup'>touch to enter a meeting name</a></p>
+                        <p class="touch-to-enter"><a href="#newmeeting" data-transition='slideup'></a></p>
                     </div>
+                    <input type="text" value="" id="keyboard-input" class="abs" />
                 </div>
                 
                 <div id="home-dial" class="collapsible closed black">
@@ -150,6 +153,7 @@
     
     <script src="../lib/date.format.js"></script>
     <script src="../lib/jquery.datemaker-1.0.0.js"></script>
+    <script src="../lib/jquery.keyboard.js"></script>
     <script src="../lib/swipe.js"></script>
     
     
@@ -161,6 +165,7 @@
     <script src="../core/proxy.js"></script>
     <script src="../core/util.js"></script>
     <script src="../config/init.js"></script>
+    <script src="../config/keyboard.js"></script>
     
     <script src="../core/mock.js"></script>
     <script src="../core/events.js"></script>

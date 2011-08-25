@@ -3,6 +3,7 @@ $(window).load(function (){
     Events.init.ui();
     Events.init.screenSaver();
     Events.init.meetings();
+    KeyboardInput.init();
 });
 
 var Events = {
@@ -38,7 +39,7 @@ var Events = {
                API.muteCamera();
             });
             
-            $("#home-newmeeting a").text(API.randomNameForMeeting())
+            $("#keyboard-input").val(API.randomNameForMeeting())
             $("#home-newmeeting .touch-container").bind('click tap', API.createMeeting);
         }
     }

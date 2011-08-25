@@ -1,0 +1,38 @@
+.ui-keyboard { padding: .3em; position: absolute; left: 0; top: 0; z-index: 16000; background:#000009; width:472px; height:264px; }
+.ui-keyboard div { font-size: 1.1em; }
+.ui-keyboard-button { cursor: pointer; overflow: hidden; }
+.ui-keyboard-button span { padding: 0; margin: 0; white-space:nowrap; }
+.ui-keyboard-button-endrow { clear: left; }
+.ui-keyboard-widekey { width: 4em; }
+.ui-keyboard-space { width: 15em; text-indent: -999em; }
+.ui-keyboard-preview { text-align: left; margin: 0 0 3px 0; display: inline; } /* width: 100%; now full window width in IE =( */ 
+.ui-keyboard-keyset { text-align: center; margin-top:40px; }
+.ui-keyboard-input { text-align: left; }
+.ui-keyboard-input.placeholder { color: #888; }
+.ui-keyboard-nokeyboard { color: #888; border-color: #888; } /* disabled or readonly inputs, or use input[disabled='disabled'] { color: #f00; } */
+
+/* only used in IE to prevent clicking in another input/textarea */
+.ui-keyboard-overlay { height: 100%; width: 100%; background: transparent; position: absolute; top: 0; left: 0; z-index: 15999; }
+.ui-keyboard-overlay-input { position: relative; top: 0; left: 0; zoom: 1; z-index: 16000; } /* put input above overlay if preview is not used - IE only */
+
+/* combo key styling - toggles diacritics on/off */
+.ui-keyboard-button.ui-keyboard-combo.ui-state-default { border-color: #ffaf0f; }
+
+
+/*----- New CSS created by Aks -----*/
+
+input.ui-keyboard-preview { background:transparent url(../images/popups/keyboard-input.png) 0 0 no-repeat; width:275px!important; height:37px; color:#FFFFFF; padding:0px 15px; line-height:36px; border:none; }
+.ui-keyboard-button { background:transparent url(../images/popups/key-bg.png) 0 0 no-repeat; width:43px; height:41px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; }
+.ui-keyboard-start { background:transparent url(../images/popups/start-key.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+.ui-keyboard-space { background:transparent url(../images/popups/space-key.png) 0 0 no-repeat; width:245px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+.ui-keyboard-shift { background:transparent url(../images/popups/shift-key.png) 0 0 no-repeat; width:68px; height:41px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; text-indent:-9999px; }
+.ui-keyboard-bksp { background:transparent url(../images/popups/backspace-key.png) 0 0 no-repeat; width:66px; height:41px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; text-indent:-9999px; }
+.ui-keyboard-95 { background:transparent url(../images/popups/number-key.png) 0 0 no-repeat; width:90px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:14px; color:#898c8c; text-transform:uppercase; }
+.ui-state-active { background:transparent url(../images/popups/shift-key-active.png) 0 0 no-repeat; width:68px; height:41px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; text-indent:-9999px; }
+.ui-keyboard-meta1 { background:transparent url(../images/popups/number-key.png) 0 0 no-repeat; width:90px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:14px; text-transform:uppercase; }
+.ui-keyboard-numeric_layout { background:transparent url(../images/popups/number-key.png) 0 0 no-repeat; width:90px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:14px; text-transform:uppercase; }
+.ui-keyboard-meta2 { background:transparent url(../images/popups/symbol-key.png) 0 0 no-repeat; width:68px; height:41px; border:none; color:#FFFFFF; font-size:14px; font-weight:bold; margin:2px; font-size:14px; text-transform:uppercase; }
+.ui-keyboard-meta3 { background:transparent url(../images/popups/capital-key.png) 0 0 no-repeat; width:90px; height:42px; border:none; color:#FFFFFF; font-size:14px; font-weight:bold; margin:2px; font-size:14px; text-transform:uppercase; }
+.ui-keyboard-default_layout { background:transparent url(../images/popups/capital-key.png) 0 0 no-repeat; width:90px; height:42px; border:none; color:#FFFFFF; font-size:14px; font-weight:bold; margin:2px; font-size:14px; text-transform:uppercase; }
+
+#keyboard-input {color: #ffffff;}

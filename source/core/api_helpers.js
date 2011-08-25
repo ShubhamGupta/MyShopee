@@ -29,7 +29,7 @@ var APIHelpers = {
     },
     
     createMeeting: function(){
-        var meeting = {id: Global.new_meeting_id, name: $("#home-newmeeting a").text(), members: Data.members()};
+        var meeting = {id: Global.new_meeting_id, name: $("#keyboard-input").val(), members: Data.members()};
         Data.meetings.push(meeting);
         API.connectMeeting(meeting);
         Global.new_meeting_id = Global.new_meeting_id + 1;
