@@ -3,7 +3,7 @@ $(window).load(function (){
     Events.init.ui();
     Events.init.screenSaver();
     Events.init.meetings();
-    KeyboardInput.init();
+    Global.current_keyboard = KeyboardInput.init();
 });
 
 var Events = {

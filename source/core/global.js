@@ -5,6 +5,7 @@ var Global = {
     currently_pinned: 0,
     current_page: '',
     current_event: null,
+    current_keyboard: null,
     inmeetingTime: 0,
     inmeetingTimer: null,
     new_meeting_id: 1,
