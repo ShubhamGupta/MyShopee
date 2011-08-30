@@ -33,10 +33,18 @@ var APIHelpers = {
     },
     
     createMeeting: function(){
-        var meeting = {id: Global.new_meeting_id, name: $("#keyboard-input").val(), members: Data.members()};
-        Data.meetings.push(meeting);
+        var meeting_name = $("#keyboard-input").val();
+        var existing_meeting = API.getMeeting({name: meeting_name});
+
+        if(existing_meeting){
+            meeting = existing_meeting;
+        }else{
+            meeting = {id: Global.new_meeting_id, name: meeting_name, members: Data.members()};
+            Data.meetings.push(meeting);
+            Global.new_meeting_id = Global.new_meeting_id + 1;
+        }
+        
         API.connectMeeting(meeting);
-        Global.new_meeting_id = Global.new_meeting_id + 1;
     },
 
     meetingTimeElapsed: function(status){

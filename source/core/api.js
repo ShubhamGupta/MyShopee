@@ -101,7 +101,17 @@ var sequenceAPI = {
     
     updateMeeting: function(){},
     
-    getMeeting: function(){},
+    getMeeting: function(options){
+        var found_meeting = false;
+        Data.meetings.forEach(function(meeting, i){
+                for(var key in options){
+                    if(meeting[key] == options[key]){found_meeting = meeting;}
+                }            
+        });        
+
+        return found_meeting;
+    },
+
     updateCurrentMeeting: function(){},
 
     
