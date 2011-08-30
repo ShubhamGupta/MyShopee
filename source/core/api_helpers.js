@@ -16,6 +16,10 @@ var APIHelpers = {
         }
     },
 
+    recentMeetings: function(){
+        return Mock.recentMeetings();
+    },
+
     // This method needs to be called to get the current meeting in session
     // This method is also used to assign a meeting to the current meeting var
     // Do not use the Global variable directly

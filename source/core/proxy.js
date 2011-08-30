@@ -130,5 +130,9 @@ var Proxy = {
     
     currentMember: function(member){
         return API.currentMember(member);
+    },
+
+    currentMeeting: function(){
+        return API.currentMeeting();
     }
 }

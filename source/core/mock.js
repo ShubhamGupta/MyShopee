@@ -64,8 +64,6 @@ var Mock = {
 
             Mock.exitMember(member);
 
-            Mock.endMeeting();
-
 
     },
 
@@ -79,9 +77,13 @@ var Mock = {
             setTimeout(function(){
             if(Global.if_processing_canceled == 0 ){
                     //Proxy.meetingEnded();
+                    if(jQuery.inArray(Proxy.currentMeeting(), Global.recent_meetings) == -1){
+                        Global.recent_meetings.push(Proxy.currentMeeting());
+                    }
+
                     Proxy.slot_ProxyHandler_Update_EndMeeting(response_JSONString);
             }
-        }, 20000);
+        }, 5000);
     },
 
 
@@ -140,5 +142,9 @@ var Mock = {
             Proxy.slot_ProxyHandler_Update_MemberInfo(response_JSONString);
 
         }, 1000);
+    },
+
+    recentMeetings: function(){
+        return Global.recent_meetings;
     }
 }

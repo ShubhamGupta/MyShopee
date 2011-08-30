@@ -41,6 +41,10 @@ var Events = {
             
             $("#keyboard-input").val(API.randomNameForMeeting())
             $("#home-newmeeting .touch-container").bind('click tap', API.createMeeting);
+
+            $("#quickconnect h1").bind("click", function(){
+                UI.loadRecentMeetings();
+            });
         }
     }
 }

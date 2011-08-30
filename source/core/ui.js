@@ -53,6 +53,7 @@ var UI = {
     loadMeetings: function(options){
         var current_time = new Date().getTime();
         var lowest_diff = 0;
+        $('#home .tiles').html("");
         API.getMeetings({type: 'available'}).forEach(function(meeting, i){
             var current_diff = Math.abs(current_time - meeting.start_at.getTime());
             //console.log("N:"+meeting.name+" D:"+current_diff);
@@ -70,9 +71,18 @@ var UI = {
         });
         
         
-        API.getMeetings({type: 'recent'}).forEach(function(meeting, i){
+        UI.loadRecentMeetings();
+        
+        this.showPage('#home-container');
+        SwipeMaster.init('.tiles');
+        $("#meeting-"+ Global.upcoming_meeting.id).focus();
+    },
+
+    loadRecentMeetings: function(){
+        $('#quickconnect .tiles').html("");
+        API.recentMeetings().forEach(function(meeting, i){
            $('#quickconnect .tiles').append("<a id='meeting-"+ meeting.id +"' href='javascript:void(0);'><p>"+ meeting.name +"</p></a>"); 
-           $('#meeting-'+ meeting.id).dblclick(function(event){
+           $('#quickconnect .tiles #meeting-'+ meeting.id).dblclick(function(event){
                 // Temp hack to prevent meeting connect
                 // Need more stable method
                 if(Global.if_scrolling == 1){Global.if_scrolling = 0;}else{
@@ -80,10 +90,6 @@ var UI = {
                 }
            });
         });
-        
-        this.showPage('#home-container');
-        SwipeMaster.init('.tiles');
-        $("#meeting-"+ Global.upcoming_meeting.id).focus();
     },
     
     processingPopup: function(display, options){
