@@ -14,6 +14,7 @@ var DialpadInput = {
         }
 
         jQuery.keyboard.keyaction.cancel = function(base){
+          base.close();
           return false;
         }
 
@@ -24,13 +25,9 @@ var DialpadInput = {
         layout: "custom",
         visible: function(e){
           jQuery(".ui-keyboard").addClass("dialpad");
-          if(jQuery(".ui-keyboard-cancel").size() == 0){
-            jQuery(".ui-keyboard-preview").parent().append("<input type='button' value='' class='ui-keyboard-cancel'/>");
-            jQuery(".ui-keyboard-cancel").bind('click', function(){Global.current_keyboard.getkeyboard().close();});
-          }
 
-          jQuery(".ui-keyboard-preview").val(jQuery(".ui-keyboard-preview").attr('title'));
-          jQuery(".ui-keyboard-preview").blur();
+          jQuery(".dialpad .ui-keyboard-preview").val(jQuery(".dialpad .ui-keyboard-preview").attr('title'));
+          jQuery(".dialpad .ui-keyboard-preview").blur();
 
           jQuery(".ui-keyboard-button:not(.ui-keyboard-actionkey)").bind("mousedown.keyboard", function(){
 

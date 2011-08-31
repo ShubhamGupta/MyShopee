@@ -473,6 +473,25 @@ h1{
     border:none;
 }
 
+#invite-options{
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:480px;
+    height:272px;
+    background:transparent url(../images/main/buttons/toast-background.png) top left no-repeat;
+    z-index:999;
+    color:white;
+    text-align:center;
+    cursor:auto;
+}
+#invite-title{
+    font-size:14px;
+    margin-top:72px;
+}
+
+
 /*overrides*/
 .ui-page{
     background:transparent url(../images/backgrounds/blue.png) no-repeat top left;

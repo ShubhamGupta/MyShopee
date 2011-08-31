@@ -46,6 +46,19 @@ var Events = {
             $("#quickconnect h1").bind("click", function(){
                 UI.loadRecentMeetings();
             });
+
+            $("#invite").bind("click tap", function(e){
+                $("#invite-options").show();
+                e.preventDefault();
+                return false;
+            });
+
+           $("#invite-dialer").bind("click tap", function(e){
+                $("#invite-options").hide();
+                Global.dialpad.getkeyboard().reveal();
+                e.preventDefault();
+                return false;
+            });
         }
     }
 }

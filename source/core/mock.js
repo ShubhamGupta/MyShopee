@@ -8,11 +8,9 @@ var Mock = {
                             member: member
             };
 
-        setTimeout(function(){
 
-           Proxy.slot_ProxyHandler_Update_MeetingMembersList(response_JSONString);
+        Proxy.slot_ProxyHandler_Update_MeetingMembersList(response_JSONString);
 
-        }, 10000);
     },
     
     exitMember: function(member){
@@ -45,13 +43,7 @@ var Mock = {
 
             Proxy.currentMember({jid: 'http://rhino04@logitech.com/gmail.994187DE3'});
 
-            setTimeout(function(){
-
-           // Proxy.joinMeeting(meeting);
-
                     Proxy.slot_ProxyHandler_Update_JoinMeeting(response_JSONString);
-
-        }, 2500);
 
           /** 
           * Seems like you just put for testing your mock joining another member and existing it.
@@ -174,8 +166,12 @@ var Mock = {
             Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
 
             var new_fake_meeting = {name: "Conf Call - 123", id: 666, members: [{jid: 'http://rhino04@logitech.com/gmail.994187DE3', type: 'room',  name: 'Board Room',  photo: 'images/main/people/in_meeting-thumb.jpg' }]};
-            Mock.joinMeeting(new_fake_meeting);
-            Mock.joinMember({jid: 'phone@logitech.com/'+phone_number, type: 'phone', name: phone_number});
+            if(!Proxy.currentMeeting()){                
+                Mock.joinMeeting(new_fake_meeting);
+            }
+
+            Mock.joinMember({jid: 'phone@logitech.com/'+phone_number, type: 'phone', name: phone_number, photo: 'images/main/people/phone.png'});
+            
         }, 7000);
 
     }

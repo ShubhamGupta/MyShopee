@@ -203,7 +203,8 @@ var UI = {
             jQuery(".dialpad .ui-keyboard-connect").addClass('ui-keyboard-connected');
             jQuery(".dialpad .ui-keyboard-connect").unbind('mouseup');
             jQuery(".dialpad .ui-keyboard-connect").bind('mouseup', function(){
-                Global.dialpad.getkeyboard().close();
+                Global.dialpad.getkeyboard().destroy();
+                Global.dialpad = DialpadInput.init();                
             });
         }
 
