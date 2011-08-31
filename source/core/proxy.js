@@ -134,5 +134,10 @@ var Proxy = {
 
     currentMeeting: function(){
         return API.currentMeeting();
-    }
+    },
+
+    slot_ProxyHandler_Phone_ConnectCall: function(response_JSONString){
+        UI.dialerStatus(response_JSONString);
+    },
+
 }

@@ -188,6 +188,28 @@ var UI = {
         var contentEl = $("#adjustcamera .ui-content");
         state ? contentEl.addClass("hidden") : contentEl.removeClass("hidden");
     },
+
+    dialerStatus: function(options){
+        var status = options['update_action'];
+        var phone  = options['phone'];
+        var status_text = "";
+
+        if(status == 'creating'  ){status_text = 'Creating Meeting...' ;}
+        if(status == 'calling'   ){status_text = 'Calling '+phone+'...';}
+        if(status == 'connecting'){status_text = 'Connecting...'       ;}
+        if(status == 'connected' ){status_text = 'Connected'           ;}
+
+        if(status == 'connected' ){
+            jQuery(".dialpad .ui-keyboard-connect").addClass('ui-keyboard-connected');
+            jQuery(".dialpad .ui-keyboard-connect").unbind('mouseup');
+            jQuery(".dialpad .ui-keyboard-connect").bind('mouseup', function(){
+                Global.dialpad.getkeyboard().close();
+            });
+        }
+
+
+        jQuery(".ui-keyboard-preview").val(status_text);
+    },
     
     endMeeting: function(){},
     switchMeeting: function(){},

@@ -146,5 +146,37 @@ var Mock = {
 
     recentMeetings: function(){
         return Global.recent_meetings;
+    },
+
+    connectCall: function(phone_number){
+        var response_JSONString	 = {
+                            error: false,
+                            errorMessage: "somethign went wrong in the cloud.",
+                            phone: phone_number
+        };
+
+        // Connect call
+        response_JSONString['update_action'] = "creating"
+        Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
+        
+        setTimeout(function(){
+            response_JSONString['update_action'] = "calling"
+            Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
+        }, 3000);
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = "connecting"
+            Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
+        }, 5000);
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = "connected"
+            Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
+
+            var new_fake_meeting = {name: "Conf Call - 123", id: 666, members: [{jid: 'http://rhino04@logitech.com/gmail.994187DE3', type: 'room',  name: 'Board Room',  photo: 'images/main/people/in_meeting-thumb.jpg' }]};
+            Mock.joinMeeting(new_fake_meeting);
+            Mock.joinMember({jid: 'phone@logitech.com/'+phone_number, type: 'phone', name: phone_number});
+        }, 7000);
+
     }
 }

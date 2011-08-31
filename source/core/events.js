@@ -4,6 +4,7 @@ $(window).load(function (){
     Events.init.screenSaver();
     Events.init.meetings();
     Global.current_keyboard = KeyboardInput.init();
+    Global.dialpad          = DialpadInput.init();
 });
 
 var Events = {

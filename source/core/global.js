@@ -7,6 +7,7 @@ var Global = {
     current_page: '',
     current_event: null,
     current_keyboard: null,
+    dialpad: null,
     inmeetingTime: 0,
     inmeetingTimer: null,
     new_meeting_id: 1,

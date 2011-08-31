@@ -38,3 +38,13 @@ input.ui-keyboard-preview { background:transparent url(../images/popups/keyboard
 #keyboard-input {color: #ffffff; font-size:17px; }
 
 .ui-keyboard-cancel {background:transparent url(../images/popups/cancel-key.png) 0 0 no-repeat;border:none; height: 34px; width: 135px;margin-left:15px;}
+
+
+/*----- Dialpad CSS ------ */
+.dialpad input.ui-keyboard-preview { background:transparent url(../images/popups/dialpad-input.png) 0 0 no-repeat; width:451px!important; height:37px; color:#FFFFFF; padding:0px 15px; line-height:36px; border:none; font-size:17px; }
+.dialpad .ui-keyboard-button { background:transparent url(../images/popups/key-dialer-bg.png) 0 0 no-repeat; width:101px; height:41px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; padding-left:15px; text-align:left;}
+.dialpad .ui-keyboard-50 {background:transparent url(../images/popups/key-dialer-2.png) 0 0 no-repeat;}
+.dialpad .ui-keyboard-connect {background:transparent url(../images/popups/connect-call.jpg) 0 0 no-repeat; width:134px; height: 81px;float:right;}
+.dialpad .ui-keyboard-connected {background:transparent url(../images/popups/dialer-connected.jpg) 0 0 no-repeat; width:134px; height: 81px;float:right;}
+.dialpad .ui-keyboard-cancel {background:transparent url(../images/popups/cancel-active.jpg) 0 0 no-repeat; width:134px; float:right;}
+.dialpad .ui-keyboard-bksp {background:transparent url(../images/popups/backspace-dialer.png) 0 0 no-repeat; width:134px; float:right;}
