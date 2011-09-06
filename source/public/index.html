@@ -147,6 +147,7 @@
             <p id="invite-title">Choose Invite Option</p><br/>
             <img id="invite-video"  src="images/popups/invite-video.jpg"/><br/><br/>
             <img id="invite-dialer" src="images/popups/invite-phone.jpg"/>
+            <input type="text" value="" id="invite-keyboard-input" style="display:none;" title="Enter a Name or Email Address" />
         </div>
 
         
@@ -155,10 +156,13 @@
         
     <!-- js at the bottom to load the page faster -->
     <script src="../lib/jquery-1.6.1.min.js"></script>
+    <script src="../lib/jquery-ui.js"></script>
+    <script src="../lib/custom-complete.js"></script>
     
     <script src="../lib/date.format.js"></script>
     <script src="../lib/jquery.datemaker-1.0.0.js"></script>
     <script src="../lib/jquery.keyboard.js"></script>
+    <script src="../lib/jquery.keyboard.extension-autocomplete.js"></script>
     <script src="../lib/swipe.js"></script>
     
     
@@ -172,6 +176,7 @@
     <script src="../config/init.js"></script>
     <script src="../config/keyboard.js"></script>
     <script src="../config/dialpad.js"></script>
+    <script src="../config/invite_keyboard.js"></script>
     
     <script src="../core/mock.js"></script>
     <script src="../core/events.js"></script>

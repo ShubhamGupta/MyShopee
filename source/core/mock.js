@@ -140,6 +140,30 @@ var Mock = {
         return Global.recent_meetings;
     },
 
+    inviteWithEmail: function(email_address){
+        email_address = email_address.replace('>', '').split(' <');
+        username      = email_address.length == 2 ? email_address[0] : '';
+        email_address = email_address.length == 2 ? email_address[1] : email_address[0];
+
+        var response_JSONString	 = {
+                            error: false,
+                            errorMessage: "somethign went wrong in the cloud.",
+                            email: email_address,
+                            name:  username
+        };
+
+
+        response_JSONString['update_action'] = "invited"
+        Proxy.slot_ProxyHandler_Email_Invite( response_JSONString );
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = "joined"
+            Proxy.slot_ProxyHandler_Email_Invite( response_JSONString );
+            Mock.joinMember({jid: 'email@logitech.com/'+email_address, type: 'user', name: username, photo: 'images/main/people/lisa_rogers.jpg'});
+        }, 6000);
+
+    },
+
     connectCall: function(phone_number){
         var response_JSONString	 = {
                             error: false,

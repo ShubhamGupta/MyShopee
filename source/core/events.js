@@ -3,8 +3,9 @@ $(window).load(function (){
     Events.init.ui();
     Events.init.screenSaver();
     Events.init.meetings();
-    Global.current_keyboard = KeyboardInput.init();
-    Global.dialpad          = DialpadInput.init();
+    Global.current_keyboard         = KeyboardInput.init();
+    Global.current_invite_keyboard  = InviteKeyboardInput.init();
+    Global.dialpad                  = DialpadInput.init();
 });
 
 var Events = {
@@ -59,6 +60,14 @@ var Events = {
                 e.preventDefault();
                 return false;
             });
+
+           $("#invite-video").bind("click tap", function(e){
+                $("#invite-options").hide();
+                Global.current_invite_keyboard.getkeyboard().reveal();
+                e.preventDefault();
+                return false;
+            });
+
         }
     }
 }

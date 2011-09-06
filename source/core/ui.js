@@ -99,7 +99,8 @@ var UI = {
             var title = options['title'];
             var toast_cancel = false;
             var cancelCallback = options['cancelCallback'];
-            
+            var timeout = options['timeout'] || 0;
+
             if(title){$('#toast p').text( title );}
             $('#toast h2').text( message );
             $('#cancel-toast').unbind('click tap').bind('click tap', function(){
@@ -113,6 +114,14 @@ var UI = {
             })
 
             $('#toast').show();
+
+            if(timeout > 0){
+                $('#cancel-toast').hide();
+                setTimeout(function(){
+                    $('#cancel-toast').show();
+                    $('#toast').hide();
+                }, timeout);
+            }
     },
     
     connectMeeting: function(meeting){
@@ -210,6 +219,21 @@ var UI = {
 
 
         jQuery(".ui-keyboard-preview").val(status_text);
+    },
+
+    emailInvite: function(options){
+        var status = options['update_action'];
+        var email  = options['email'];
+        var status_text = "";
+        
+        if(status == 'joined'){
+            // Dont do anything for now. User will be joined into the meeting via a mock call
+        }
+
+        if(status == 'invited'){
+            UI.processingPopup(true, {title: 'Invited', message: email, timeout: 2000})
+        }
+        
     },
     
     endMeeting: function(){},

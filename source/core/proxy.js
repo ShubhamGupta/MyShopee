@@ -140,4 +140,8 @@ var Proxy = {
         UI.dialerStatus(response_JSONString);
     },
 
+    slot_ProxyHandler_Email_Invite: function(response_JSONString){
+        UI.emailInvite(response_JSONString);
+    }
+
 }
