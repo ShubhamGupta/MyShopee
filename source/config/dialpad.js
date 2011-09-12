@@ -3,17 +3,12 @@ var DialpadInput = {
         var keyboard = jQuery("#dialpad-input").keyboard(this.config);
 
         jQuery.keyboard.keyaction.connect = function(base){
-          //base.close(true);
-
-          //jQuery(".ui-keyboard-preview").val(jQuery(".ui-keyboard-preview").attr("title"));
-          //jQuery(".ui-keyboard-start-active").addClass("ui-keyboard-start");
-          //jQuery(".ui-keyboard-start").removeClass("ui-keyboard-start-active");
-
-          Mock.connectCall(jQuery(".ui-keyboard-preview").val());
+          Mock.connectCall(jQuery(Global.dialpad.getkeyboard().preview).val());
           return false;
         }
 
         jQuery.keyboard.keyaction.cancel = function(base){
+          jQuery(".ui-keyboard").removeClass("dialpad");            
           base.close();
           return false;
         }
@@ -23,16 +18,21 @@ var DialpadInput = {
     
     config:  {
         layout: "custom",
+
+        beforeClose:function(e){
+          jQuery(".ui-keyboard").removeClass("dialpad");            
+        },
+
         visible: function(e){
           jQuery(".ui-keyboard").addClass("dialpad");
 
-          jQuery(".dialpad .ui-keyboard-preview").val(jQuery(".dialpad .ui-keyboard-preview").attr('title'));
-          jQuery(".dialpad .ui-keyboard-preview").blur();
+          jQuery(Global.dialpad.getkeyboard().preview).val(jQuery(e.target).attr('title'));
+          jQuery(Global.dialpad.getkeyboard().preview).blur();
 
           jQuery(".ui-keyboard-button:not(.ui-keyboard-actionkey)").bind("mousedown.keyboard", function(){
 
-            if(jQuery(".ui-keyboard-preview").val() == jQuery(".ui-keyboard-preview").attr('title')){
-              jQuery(".ui-keyboard-preview").val('');
+            if(jQuery(Global.dialpad.getkeyboard().preview).val() == jQuery(e.target).attr('title')){
+              jQuery(Global.dialpad.getkeyboard().preview).val('');
               jQuery(".ui-keyboard-start").addClass("ui-keyboard-start-active");
               jQuery(".ui-keyboard-start-active").removeClass("ui-keyboard-start");
             }

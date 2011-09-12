@@ -69,6 +69,7 @@ var APIHelpers = {
     },
 
     meetingEnded: function(){
+        Global.current_meeting = null;
         this.meetingTimeElapsed(0);
         UI.processingPopup(0);
         UI.screenSaver(1, API.screenSaver());

@@ -5,7 +5,7 @@ var KeyboardInput = {
         jQuery.keyboard.keyaction.start = function(base){
           base.close(true);
 
-          jQuery(".ui-keyboard-preview").val(jQuery(".ui-keyboard-preview").attr("title"));
+          jQuery(Global.current_keyboard.getkeyboard().preview).val(jQuery(Global.current_keyboard.getkeyboard().preview).attr("title"));
           jQuery(".ui-keyboard-start-active").addClass("ui-keyboard-start");
           jQuery(".ui-keyboard-start").removeClass("ui-keyboard-start-active");
 
@@ -34,17 +34,17 @@ var KeyboardInput = {
         layout: "custom",
         visible: function(e){
           if(jQuery(".ui-keyboard-cancel").size() == 0){
-            jQuery(".ui-keyboard-preview").parent().append("<input type='button' value='' class='ui-keyboard-cancel'/>");
+            jQuery(Global.current_keyboard.getkeyboard().preview).parent().append("<input type='button' value='' class='ui-keyboard-cancel'/>");
             jQuery(".ui-keyboard-cancel").bind('click', function(){Global.current_keyboard.getkeyboard().close();});
           }
 
-          jQuery(".ui-keyboard-preview").val(jQuery(".ui-keyboard-preview").attr('title'));
-          jQuery(".ui-keyboard-preview").blur();
+          jQuery(Global.current_keyboard.getkeyboard().preview).val(jQuery(e.target).attr('title'));
+          jQuery(Global.current_keyboard.getkeyboard().preview).blur();
 
           jQuery(".ui-keyboard-button:not(.ui-keyboard-actionkey)").bind("mousedown.keyboard", function(){
 
-            if(jQuery(".ui-keyboard-preview").val() == jQuery(".ui-keyboard-preview").attr('title')){
-              jQuery(".ui-keyboard-preview").val('');
+            if(jQuery(Global.current_keyboard.getkeyboard().preview).val() == jQuery(Global.current_keyboard.getkeyboard().preview).attr('title')){
+              jQuery(Global.current_keyboard.getkeyboard().preview).val('');
               jQuery(".ui-keyboard-start").addClass("ui-keyboard-start-active");
               jQuery(".ui-keyboard-start-active").removeClass("ui-keyboard-start");
             }

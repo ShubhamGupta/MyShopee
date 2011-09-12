@@ -172,13 +172,14 @@ var Mock = {
         };
 
         // Connect call
-        response_JSONString['update_action'] = "creating"
-        Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
-        
+        if(!Proxy.currentMeeting()){
+            response_JSONString['update_action'] = "creating"
+            Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
+        }
         setTimeout(function(){
             response_JSONString['update_action'] = "calling"
             Proxy.slot_ProxyHandler_Phone_ConnectCall( response_JSONString );
-        }, 3000);
+        }, Proxy.currentMeeting() ? 0 : 3000);
 
         setTimeout(function(){
             response_JSONString['update_action'] = "connecting"

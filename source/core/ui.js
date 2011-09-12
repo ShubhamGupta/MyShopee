@@ -213,7 +213,8 @@ var UI = {
             jQuery(".dialpad .ui-keyboard-connect").unbind('mouseup');
             jQuery(".dialpad .ui-keyboard-connect").bind('mouseup', function(){
                 Global.dialpad.getkeyboard().destroy();
-                Global.dialpad = DialpadInput.init();                
+                Global.dialpad = DialpadInput.init();     
+                jQuery(".ui-keyboard").removeClass("dialpad");                       
             });
         }
 
@@ -224,6 +225,7 @@ var UI = {
     emailInvite: function(options){
         var status = options['update_action'];
         var email  = options['email'];
+        var name   = options['name'];
         var status_text = "";
         
         if(status == 'joined'){
@@ -231,7 +233,7 @@ var UI = {
         }
 
         if(status == 'invited'){
-            UI.processingPopup(true, {title: 'Invited', message: email, timeout: 2000})
+            UI.processingPopup(true, {title: 'Invited<br/>'+name, message: email, timeout: 2000})
         }
         
     },

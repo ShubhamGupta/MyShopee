@@ -8,9 +8,9 @@ var InviteKeyboardInput = {
         SwipeMaster.init('.ui-autocomplete');
         jQuery.keyboard.keyaction.invite = function(base){
 
-          Mock.inviteWithEmail(jQuery(".ui-keyboard-preview").val());
+          Mock.inviteWithEmail(jQuery(Global.current_invite_keyboard.getkeyboard().preview).val());
           base.close(true);
-          jQuery(".ui-keyboard-preview").val(jQuery(".ui-keyboard-preview").attr("title"));
+          jQuery(Global.current_invite_keyboard.getkeyboard().preview).val(jQuery(Global.current_invite_keyboard.getkeyboard().preview).attr("title"));
 
           return false;
         }
@@ -48,29 +48,33 @@ var InviteKeyboardInput = {
     
     config:  {
         layout: "custom",
-        beforeClose:function(e){jQuery("#ui-autocomplete-container").hide();},
+        beforeClose:function(e){
+            jQuery("#ui-autocomplete-container").hide();
+            jQuery(".ui-keyboard").removeClass("invite-keyboard");
+        },
+
         visible: function(e){
           jQuery(".ui-keyboard").addClass("invite-keyboard");
           jQuery("#ui-autocomplete-container").show();
  
           if(jQuery(".ui-keyboard-cancel").size() == 0){
-            jQuery(".ui-keyboard-preview").parent().append("<input type='button' value='' class='ui-keyboard-cancel'/>");
+            jQuery(Global.current_invite_keyboard.getkeyboard().preview).parent().append("<input type='button' value='' class='ui-keyboard-cancel'/>");
             jQuery(".ui-keyboard-cancel").bind('click', function(){Global.current_invite_keyboard.getkeyboard().close();});
           }
 
 /*
           if(jQuery("#ui-keyboard-autocomplete").size() == 0){
-            jQuery(".ui-keyboard-preview").parent().append("<div id='ui-keyboard-autocomplete'/>");
+            jQuery(Global.current_invite_keyboard.getkeyboard().preview).parent().append("<div id='ui-keyboard-autocomplete'/>");
           }
 */
 
-          jQuery(".ui-keyboard-preview").val(jQuery(".ui-keyboard-preview").attr('title'));
-          jQuery(".ui-keyboard-preview").blur();
+          jQuery(Global.current_invite_keyboard.getkeyboard().preview).val(jQuery(e.target).attr('title'));
+          jQuery(Global.current_invite_keyboard.getkeyboard().preview).blur();
 
           jQuery(".invite-keyboard .ui-keyboard-button:not(.ui-keyboard-actionkey)").bind("mousedown.keyboard", function(){
 
-            if(jQuery(".ui-keyboard-preview").val() == jQuery(".ui-keyboard-preview").attr('title')){
-              jQuery(".ui-keyboard-preview").val('');
+            if(jQuery(Global.current_invite_keyboard.getkeyboard().preview).val() == jQuery(Global.current_invite_keyboard.getkeyboard().preview).attr('title')){
+              jQuery(Global.current_invite_keyboard.getkeyboard().preview).val('');
               jQuery(".ui-keyboard-start").addClass("ui-keyboard-start-active");
               jQuery(".ui-keyboard-start-active").removeClass("ui-keyboard-start");
             }

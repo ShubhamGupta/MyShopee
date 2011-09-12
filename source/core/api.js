@@ -33,7 +33,6 @@ var sequenceAPI = {
     endMeeting: function(){
         UI.processingPopup(1, {message: "Please wait", title: "Ending meeting..", cancelCallback: this.cancelEndMeeting});
         Mock.endMeeting();
-        Global.current_meeting = null;
     },
     
     
