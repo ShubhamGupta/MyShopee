@@ -5,6 +5,9 @@ var sequenceAPI = {
         Mock.loadMeetings(options);
     },
 
+    recentMeetings: function(){
+        return Mock.recentMeetings();
+    },
     
     connectMeeting: function(meeting){        
         UI.processingPopup(1, {message: meeting.name, title: "Now Joining.."});
