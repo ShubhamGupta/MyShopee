@@ -1,4 +1,24 @@
 var Mock = {
+    loadMeetings: function(options){
+        var type = options['type'];
+        var meetings = new Array();
+        
+        Data['meetings'].forEach(function(meeting, i){
+            if(meeting['type'] == type){meetings.push(meeting);}
+        })
+
+
+        var response_JSONString	 = {
+                            error: false,
+                            errorMessage: "somethign went wrong in the cloud!",
+                            meetings: meetings
+            };
+        setTimeout(function(){
+            Proxy.slot_ProxyHandler_Load_Meetings(response_JSONString);
+        }, 2000);
+        
+    },
+
     joinMember: function(member){
 
         var response_JSONString	 = {

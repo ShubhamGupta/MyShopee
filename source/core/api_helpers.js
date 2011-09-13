@@ -6,6 +6,11 @@ var APIHelpers = {
         return options;
     },
 
+    showMeetings: function(options){
+        UI.loadMeetings(options);
+        UI.processingPopup(0);
+    },
+
     joinMeeting: function(meeting){
         this.currentMeeting(meeting);
         
@@ -77,6 +82,11 @@ var APIHelpers = {
     
     memberMuted: function(member, state){
         UI.muteMember(member, state);
+    },
+
+    memberPinned: function(member){
+        UI.pinMember(member, 1);
+        Global.currently_pinned = member;
     },
     
     joinMember: function(member){

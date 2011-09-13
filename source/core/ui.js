@@ -54,7 +54,7 @@ var UI = {
         var current_time = new Date().getTime();
         var lowest_diff = 0;
         $('#home .tiles').html("");
-        API.getMeetings({type: 'available'}).forEach(function(meeting, i){
+        options['meetings'].forEach(function(meeting, i){
             var current_diff = Math.abs(current_time - meeting.start_at.getTime());
             //console.log("N:"+meeting.name+" D:"+current_diff);
             if( current_diff < lowest_diff || lowest_diff == 0){Global.upcoming_meeting = meeting; lowest_diff = current_diff;}

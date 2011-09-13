@@ -19,7 +19,7 @@ var Events = {
             $('.header .time').bind('click', function(){UI.screenSaver(1, API.screenSaver());});
             $('#splash-screen').bind('click', function(){
                 UI.screenSaver(0, API.screenSaver());
-                UI.loadMeetings();
+                API.loadMeetings({type: 'available'});
             });
         },
         

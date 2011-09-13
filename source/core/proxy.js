@@ -4,6 +4,10 @@ var Proxy = {
     updateMember: function(member, attribs){
         return API.updateMember(member, attribs);
     },
+
+    slot_ProxyHandler_Load_Meetings: function(response_JSONString){
+        API.showMeetings(response_JSONString);        
+    },
     
     
     /*******************     CallBack Handlers    ************************/
