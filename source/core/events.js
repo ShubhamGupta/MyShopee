@@ -3,9 +3,13 @@ $(window).load(function (){
     Events.init.ui();
     Events.init.screenSaver();
     Events.init.meetings();
-    Global.current_keyboard         = KeyboardInput.init();
-    Global.current_invite_keyboard  = InviteKeyboardInput.init();
-    Global.dialpad                  = DialpadInput.init();
+    Events.init.settings();
+    Global.current_keyboard          = KeyboardInput.init();
+    Global.current_invite_keyboard   = InviteKeyboardInput.init();
+    Global.dialpad                   = DialpadInput.init();
+    Global.current_network_keyboard  = NetworkKeyboardInput.init({  callback: API.wirelessSetup });
+    Global.current_password_keyboard = PasswordKeyboardInput.init({ callback: API.wirelessSetup });
+    Global.current_passcode_keyboard = PasscodeKeyboardInput.init({ callback: API.passcodeSetup });
 });
 
 var Events = {
@@ -21,6 +25,55 @@ var Events = {
                 UI.screenSaver(0, API.screenSaver());
                 API.loadMeetings({type: 'available'});
             });
+        },
+
+        settings: function(){
+            $('#settings-container .help-link').bind('click tap', function(){
+                UI.screenSaver(0, API.screenSaver());
+                UI.showPage('#help-screen');
+                return false;
+            });
+
+            $('#settings-container .back-link').bind('click tap', function(){
+                UI.showPreviousPage();
+                return false;
+            });
+
+            $('#settings-container .connect-wifi-link').bind('click tap', function(){
+                Mock.wirelessSetup();
+                return false;
+            });
+
+            $('#connection-select-screen .connect-eth-link').bind('click tap', function(){
+                UI.wiredSetup();
+                return false;
+            });
+
+            $('#settings-container .connect-network-link').bind('click tap', function(){
+                UI.showPage('#connection-select-screen');
+                return false;
+            });
+
+            $('#settings-container .wireless-manual-link').bind('click tap', function(){
+                UI.showPage('#wireless-manual-screen');
+                Global.current_network_keyboard.getkeyboard().reveal();
+                Global.current_network_keyboard.getkeyboard().options.visible();
+                return false;
+            });
+
+            $('#settings-container .device-association-yes-link').bind('click tap', function(){
+                return false;
+            });
+
+            $('#settings-container .device-association-no-link').bind('click tap', function(){
+                UI.continueScreen({ title:  "Check gtalk passcode",
+                                    text:   "Please check that the password you've entered corresponds to the correct room.",
+                                    action: API.passcode,
+                                    label:  "Re-enter passcode"
+                                  })
+                return false;
+            });
+
         },
         
         meetings: function(){

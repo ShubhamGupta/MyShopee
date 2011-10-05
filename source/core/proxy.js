@@ -125,7 +125,22 @@ var Proxy = {
     	
     },	
     
-    
+    slot_ProxyHandler_Settings_Updates:  function(response_JSONString){
+        API.checkUpdates(response_JSONString);
+    },
+
+    slot_ProxyHandler_Settings_Wireless: function(response_JSONString){
+    	API.wirelessSetup(response_JSONString);
+    },	
+  
+    slot_ProxyHandler_Settings_Wired: function(response_JSONString){
+    	API.wiredSetup(response_JSONString);
+    },	
+
+    slot_ProxyHandler_Settings_Passcode: function(response_JSONString){
+    	API.passcodeSetup(response_JSONString);
+    },	
+   
     slot_ProxyHandler_Update_NewChatMessage: function(response_JSONString){
     },	
     

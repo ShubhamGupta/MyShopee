@@ -1,0 +1,141 @@
+#settings-container a img { border:none; }
+
+#settings-container .settings-layout { width:480px; height:272px; overflow:hidden; background:#121212 url(../images/settings/body-bg.gif) 0 0 repeat-x; position:relative;  }
+#settings-container .settings-layout2 { width:480px; height:272px; overflow:hidden; background:#373737; position:relative;  }
+
+#settings-container .header-bg { background: #252525 url(../images/settings/header-bg.gif) 0 0 repeat-x; height:36px; padding:2px 6px 0px; text-align:center; font-size:14px; text-transform:uppercase; color:#f1f1f1; line-height:33px; }
+
+#settings-container .body-bg { overflow:hidden; }
+#settings-container .body-bg .text { color:#f1f1f1; font-size:20px; padding:30px 12px 0px; }
+#settings-container .body-bg .text p { font-size:18px; padding:0px; margin:0px 0px 15px; }
+#settings-container .body-bg .checking { color:#f1f1f1; font-size:18px; padding:50px 0px; text-align:center; }
+#settings-container .body-bg .detected { color:#f1f1f1; font-size:21px; padding:0px 12px 0px; }
+
+#settings-container div.frame { overflow:hidden; position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%; height:233px;}
+#settings-container ul.bottom-bar { position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%;}
+#language-select-screen ul.bottom-bar {top:0px !important;}
+#wireless-select-screen ul.bottom-bar {top:0px !important;}
+#timezone-select-screen ul.bottom-bar {top:0px !important;}
+#settings-container ul.bottom-bar li { background:#010101; border-top:solid 1px #676767; border-bottom:solid 1px #676767; padding:0px 14px; line-height:38px; list-style:none; margin:0px; }
+#settings-container ul.bottom-bar li a { display:block; text-decoration:none; color:#f1f1f1; font-size:17px; font-weight:bold; text-decoration:none; }
+#settings-container ul.bottom-bar li .floatRight { margin-top:10px; }
+
+#settings-container ul.bottom-bar2 { overflow:hidden; position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%; max-height:150px; overflow:auto; }
+#settings-container ul.bottom-bar2 li { background:#010101; border-top:solid 1px #676767; border-bottom:solid 1px #676767; padding:3px 9px; list-style:none; margin:0px; overflow:hidden; }
+#settings-container ul.bottom-bar2 li .img { margin:0px; padding:0px; float:left; }
+#settings-container ul.bottom-bar2 li a { display:block; text-decoration:none; color:#f1f1f1; font-size:17px; font-weight:bold; text-decoration:none; }
+#settings-container ul.bottom-bar2 li span.text { float:left; padding:0px 0px 0px 16px; width:185px; line-height:116px; }
+#settings-container ul.bottom-bar2 li .floatRight { margin-top:50px; }
+
+#settings-container a.continue-bg { background:#010101; border-top:solid 1px #676767; border-bottom:solid 1px #676767; overflow:hidden; height:38px; padding:0px 14px; line-height:38px; position:absolute; bottom:0px; width:452px; color:#f1f1f1; font-size:17px; font-weight:bold; text-decoration:none; }
+#settings-container a.continue-bg .floatRight { margin-top:10px; }
+
+#settings-container .floatLeft { float:left; }
+#settings-container .floatRight { float:right; }
+#settings-container .clearAll  { clear:both; }
+
+/* Network keyboard begins */
+#settings-container .network-keyboard input.field { background:transparent url(../images/settings/input-passcode.png) 0 0 no-repeat; width:459px; height:39px; line-height:36px; padding:0px 3px; font-size:14px; border:none; }
+#settings-container .network-keyboard { overflow:hidden; padding:14px 4px 0px; }
+.ui-keyboard-network {top: 50px !important; left: 3px !important; background: none; padding: 0px;}
+.ui-keyboard-submit_network { background:transparent url(../images/popups/start-key.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+.ui-keyboard-submit_network-active { background:transparent url(../images/popups/start-key-active.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+
+#settings-container .passcode-keyboard input.field { background:transparent url(../images/settings/input-passcode.png) 0 0 no-repeat; width:459px; height:39px; line-height:36px; padding:0px 3px; font-size:14px; border:none; }
+#settings-container .passcode-keyboard { overflow:hidden; padding:14px 4px 0px; }
+.ui-keyboard-passcode {top: 50px !important; left: 3px !important; background: none; padding: 0px;}
+.ui-keyboard-submit_passcode { background:transparent url(../images/popups/start-key.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+.ui-keyboard-submit_passcode-active { background:transparent url(../images/popups/start-key-active.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+
+
+#settings-container .password-keyboard input.field { background:transparent url(../images/settings/input-passcode.png) 0 0 no-repeat; width:459px; height:39px; line-height:36px; padding:0px 3px; font-size:14px; border:none; }
+#settings-container .password-keyboard { overflow:hidden; padding:14px 4px 0px; }
+.ui-keyboard-password {top: 50px !important; left: 3px !important; background: none; padding: 0px;}
+.ui-keyboard-submit_password { background:transparent url(../images/popups/start-key.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+.ui-keyboard-submit_password-active { background:transparent url(../images/popups/start-key-active.png) 0 0 no-repeat; width:110px; height:42px; border:none; color:#FFFFFF; font-size:22px; font-weight:bold; margin:2px; font-size:12px; color:#898c8c; text-transform:uppercase; }
+
+
+
+/* Password keyboard input styling below */
+
+#settings-container .password-keyboard { overflow:hidden; padding:14px 4px 0px; }
+#settings-container .password-keyboard input.passcode { background:transparent url(../images/settings/input-passcode.png) 0 0 no-repeat; width:459px; height:39px; line-height:36px; padding:0px 6px; font-size:14px; border:none; }
+#settings-container .password-keyboard .passcode-keyboard { overflow:hidden; margin-top:5px; text-align:center; }
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button {
+    background: transparent url("../images/settings/passcode-buttons.png") 0 0  no-repeat;
+    border: medium none;
+	font-family:"Droid Sans", Arial;
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: bold;
+	text-align:center;
+	width:46px;
+    height: 43px;
+    margin:0px 1px 0px -4px;
+	cursor:pointer;
+}
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button-characters {
+    background: transparent url("../images/settings/passcode-buttons.png") 0 0  no-repeat;
+    border: medium none;
+	font-family:"Droid Sans", Arial;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: normal;
+	text-align:center;
+	width:46px;
+    height: 43px;
+    margin:0px 1px 0px -4px;
+}
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button-case {
+    background: transparent url("../images/settings/passcode-buttons-case.png") 0 0  no-repeat;
+    border: medium none;
+	font-family:"Droid Sans", Arial;
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: bold;
+	text-align:center;
+	width:73px;
+    height: 43px;
+    margin:0px 1px 0px -4px;
+	text-indent:-9999px;
+}
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button-back {
+    background: transparent url("../images/settings/passcode-buttons-back.png") 0 0  no-repeat;
+    border: medium none;
+	font-family:"Droid Sans", Arial;
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: bold;
+	text-align:center;
+	width:67px;
+    height: 43px;
+    margin:0px 1px 0px -4px;
+	text-indent:-9999px;
+}
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button-space {
+    background: transparent url("../images/settings/passcode-buttons-space.png") 0 0  no-repeat;
+    border: medium none;
+	font-family:"Droid Sans", Arial;
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: bold;
+	text-align:center;
+	width:140px;
+    height: 43px;
+    margin:0px 1px 0px -4px;
+	text-indent:-9999px;
+}
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button-submit {
+    background: transparent url("../images/settings/passcode-buttons-submit.png") 0 0  no-repeat;
+    border: medium none;
+	font-family:"Droid Sans", Arial;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: bold;
+	text-align:center;
+	width:114px;
+    height: 43px;
+    margin:0px 1px 0px -4px;
+}
+#settings-container .password-keyboard .passcode-keyboard .ui-passcode-button span { margin:0px; padding:0px; white-space:nowrap; }
+

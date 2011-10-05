@@ -12,6 +12,9 @@
         <link rel="stylesheet" href="css/main.css" type="text/css" />
         
         <link rel="stylesheet" href="css/keyboard.css" type="text/css" />
+
+        <link rel="stylesheet" href="css/settings.css" type="text/css" />
+
     </head>
     <body>
        <div class="mainWrapper" style="-webkit-transform-style:preserve-3d; -webkit-perspective:900; -webkit-transform:translateZ(0)">
@@ -149,10 +152,242 @@
             <img id="invite-dialer" src="images/popups/invite-phone.jpg"/>
             <input type="text" value="" id="invite-keyboard-input" style="display:none;" title="Enter a Name or Email Address" />
         </div>
+<!-- Settings interface begins -->
+        
+        <div id="settings-container">
 
-        
-        
-    </div> 
+            <div id="bootup-screen" class="screen settings-layout" data-role="page">
+                <img src="images/settings/bootup.jpg" border='0'/>
+            </div>
+
+            <div id="passcode-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Enter passcode
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="network-keyboard">
+                    <input type='text' class='field' id='passcode-keyboard-input' />
+                  </div>
+	              </div>
+            </div>
+
+            <div id="passcode-accepted-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Passcode accepted
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="text">
+                    <p>This device is now associated with the account [room name]. Is this correct?</p>
+                  </div>
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                    <li>
+			                <a href="javascript:void(0);" class='device-association-yes-link'>Yes
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                    <li>
+			                <a href="javascript:void(0);" class='device-association-no-link'>No
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                  </ul>  
+                </div>
+            </div>
+
+
+            <div id="language-select-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Choose Language
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                  </ul>  
+                </div>
+            </div>
+
+            <div id="timezone-select-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Choose time zone
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                  </ul>  
+                </div>
+            </div>
+
+            <div id="connection-select-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Choose connection type
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="text">
+                    <p>How would you like to connect the [Grizzly] to the internet</p>
+                  </div>
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                    <li>
+			                <a href="javascript:void(0);" class='connect-wifi-link'>Wireless Connection
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                    <li>
+			                <a href="javascript:void(0);" class='connect-eth-link'>Wired (Ethernet) Connection
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                  </ul>  
+                </div>
+            </div>
+
+            <div id="wireless-select-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Choose Network
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                  </ul>  
+                </div>
+            </div>
+
+            <div id="wireless-manual-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Enter network name
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="network-keyboard">
+                    <input type='text' class='field' id='network-keyboard-input' />
+                  </div>
+	              </div>
+            </div>
+
+            <div id="wireless-password-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              Enter your password
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="network-keyboard">
+                    <input type='text' class='field' id='password-keyboard-input' />
+                  </div>
+	              </div>
+            </div>
+
+
+
+            <div id="wireless-troubleshoot-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              I don't see my network
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="text">
+                    <p>Please make sure your network is running and in range. If your network is hidden, you'll have to enter your network name manually.</p>
+                  </div>
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                    <li>
+			                <a href="javascript:void(0);" class='connect-wifi-link'>Search for my network
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                    <li>
+			                <a href="javascript:void(0);" class='wireless-manual-link'>Enter my network name
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                  </ul>  
+                </div>
+            </div>
+
+            <div id="wired-troubleshoot-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+                    Not Connected
+		              <a href="#" class='help-link'><img src="images/settings/arrow-question.jpg" class="floatRight" /></a>
+	              </div>
+	              <div class="body-bg">
+                  <div class="text">
+                    <p>We can't detect a wired connection. If you haven't connected [Grizzly] to your network with an ethernet cable, please do so now.</p>
+                  </div>
+	              </div>
+	              <div class='frame'>
+  	              <ul class="bottom-bar">
+                    <li>
+			                <a href="javascript:void(0);" class='connect-wired-link'>Try again
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+
+                    <li>
+			                <a href="javascript:void(0);" class='connect-network-link'>Choose a different network
+			                <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		                </li>
+                  </ul>  
+                </div>
+            </div>
+
+
+            <div id="loading-screen" class="screen settings-layout" data-role="page">
+	            <div class="body-bg">
+		            <div class="checking">
+			            <p class="message"></p><br /><br />
+			            <img src="images/settings/loader.gif" />
+		            </div>
+	            </div>
+            </div>
+
+
+
+            <div id="help-screen" class="screen settings-layout" data-role="page">
+                <div class="header-bg">
+		              <a href="#" class="back-link"><img src="images/settings/arrow-prev.jpg" class="floatLeft" /></a>
+		              HELP
+	              </div>
+	              <div class="body-bg">
+                  <div class="text">
+		                  <p>Having setup problems? Additional support, including answers to frequently asked questions, cand be found at www.logitech.com/support.</p>
+		                  <p>If you need personal assistance, you can contact Logitech customer support via the following:</p>
+		                  <p>email: support@logitech.com<br>
+		                  phone: 1-800-555-5555</p>
+                  </div>
+	              </div>
+            </div>
+
+            <div id="continue-screen" class="screen settings-layout" data-role="page">
+	              <div class="header-bg"></div>
+	              <div class="body-bg">
+		              <div class="text"></div>
+	              </div>
+	              <ul class="bottom-bar">
+		              <li>
+			              <a href="#" class='continue-link'><span class='btnLabel'>Continue</span>
+			              <img src="images/settings/arrow-continue.gif" class="floatRight"></a>
+		              </li>
+	              </ul>
+            </div>
+
+        </div> 
+
+<!-- Settings interface ends -->
         
     <!-- js at the bottom to load the page faster -->
     <script src="../lib/jquery-1.6.1.min.js"></script>
@@ -164,12 +399,14 @@
     <script src="../lib/jquery.keyboard.js"></script>
     <script src="../lib/jquery.keyboard.extension-autocomplete.js"></script>
     <script src="../lib/swipe.js"></script>
+    <script src="../lib/vertical-swipe.js"></script>
     
     
     <script src="../db/data.js"></script>
     <script src="../core/global.js"></script>
     <script src="../core/api.js"></script>
     <script src="../core/api_helpers.js"></script>
+    <script src="../core/api_settings_helpers.js"></script>
     <script src="../core/ui.js"></script>
     <script src="../core/proxy.js"></script>
     <script src="../core/util.js"></script>
@@ -177,6 +414,11 @@
     <script src="../config/keyboard.js"></script>
     <script src="../config/dialpad.js"></script>
     <script src="../config/invite_keyboard.js"></script>
+    <script src="../config/network_keyboard.js"></script>
+    <script src="../config/password_keyboard.js"></script>
+    <script src="../config/passcode_keyboard.js"></script>
+
+    <script src="../core/settings_ui.js"></script>
     
     <script src="../core/mock.js"></script>
     <script src="../core/events.js"></script>

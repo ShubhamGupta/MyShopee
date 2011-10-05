@@ -31,8 +31,12 @@ var UI = {
             
         }
             
-        
-        Global.current_page = page_id;
+        Global.previous_page = Global.current_page;
+        Global.current_page  = page_id;
+    },
+
+    showPreviousPage: function(){
+        this.showPage(Global.previous_page);
     },
     
     postAnimateIn: function(event){
@@ -237,7 +241,109 @@ var UI = {
         }
         
     },
-    
+
+    /* Setup methods begin */
+
+    startSetup: function(options){
+        UI.screenSaver(0, API.screenSaver()); // Hide screensaver
+        UI.languageSelect();
+    },
+
+    languageSelect: function(){
+        Data.languages.forEach(function(l, i){
+            jQuery('#language-select-screen .bottom-bar').append('<li id="language-'+ i +'"><a href="javascript:void(0);">'+ l +'<img src="images/settings/arrow-continue.gif" class="floatRight" /></a></li>');
+            jQuery('#language-'+i).dblclick(function(){
+                API.selectLanguage({language: l});
+                UI.welcomeScreen();
+            });        
+        });
+
+        VerticalSwipeMaster.init('#language-select-screen .bottom-bar');
+        UI.showPage('#language-select-screen');
+    },
+
+    timezoneSelect: function(){
+        Data.timezones.forEach(function(l, i){
+            jQuery('#timezone-select-screen .bottom-bar').append('<li id="timezone-'+ i +'"><a href="javascript:void(0);">'+ l +'<img src="images/settings/arrow-continue.gif" class="floatRight" /></a></li>');
+            jQuery('#timezone-'+i).dblclick(function(){
+                API.selectTimezone({timezone: l});
+                API.checkUpdates({update_action: "checking"});
+                return false;
+                
+            });        
+        });
+
+        VerticalSwipeMaster.init('#timezone-select-screen .bottom-bar');
+        UI.showPage('#timezone-select-screen');
+    },
+
+    connectionSelect: function(){
+        UI.showPage('#connection-select-screen');
+    },
+
+    loading: function(options){
+        if(options['text']) jQuery("#loading-screen .message").html(options['text']);
+        if(Global.current_page != '#loading-screen'){UI.showPage('#loading-screen');}
+    },
+
+    wiredSetup: function(){
+        this.continueScreen({title: 'Wired Setup', text: 'Make sure your ethernet cable is properly connected, then press "continue".',
+                             action: function(){
+                                UI.loading({text: "Connecting..."});
+                                Mock.wiredSetup();
+                             }});
+    },
+
+    wirelessSetup: function(networks){
+        jQuery('#wireless-select-screen .bottom-bar').text('');
+        networks.forEach(function(n, i){
+            jQuery('#wireless-select-screen .bottom-bar').append('<li id="network-'+ i +'"><a href="javascript:void(0);">'+ n.label +'<img src="images/settings/arrow-continue.gif" class="floatRight" /></a></li>');
+            jQuery('#network-'+i).dblclick(function(){
+                if(n['callback']){
+                    n['callback']();
+                }else{
+                    API.selectNetwork({network: n});
+                }
+                //UI.welcomeScreen();
+            });        
+        });
+
+        VerticalSwipeMaster.init('#wireless-select-screen .bottom-bar');
+        this.showPage('#wireless-select-screen');
+    },
+
+    wirelessPassword: function(){
+        this.showPage('#wireless-password-screen');
+    },
+
+    welcomeScreen: function(){
+        this.continueScreen({title: 'WELCOME', text: "Welcome to [Logitech Grizzly]. Let's get you set up and connected.", 
+                             action: UI.connectionSelect});
+    },
+
+    continueScreen: function(options){
+        jQuery("#continue-screen .header-bg").text(options['title']);
+        jQuery("#continue-screen .text").html(options['text']);
+        if(options['label']){        
+            jQuery("#continue-screen .btnLabel").html(options['label']);
+        }else{
+            jQuery("#continue-screen .btnLabel").html('Continue');
+        }
+
+
+        jQuery("#continue-screen .continue-link").bind('click tap', function(){
+            if(options['action']){
+                jQuery("#continue-screen .continue-link").unbind('click tap');
+                options['action'](); // Must run callback after unbind else continue in continue screen fails
+            }
+            return false;
+        });
+
+        if(Global.current_page != '#continue-screen'){UI.showPage('#continue-screen')};
+    },
+
+    /* Setup methods end */
+
     endMeeting: function(){},
     switchMeeting: function(){},
     newMeeting: function(){},

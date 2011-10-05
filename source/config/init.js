@@ -8,3 +8,6 @@ API.__proto__ = sequenceAPI;  // instance becomes the "this"
 
 // Add helper methods to the loaded API
 for(var method in APIHelpers){API[method] = APIHelpers[method];}
+
+// Add helper methods for settings / setup to the loaded API
+for(var method in APISettingsHelpers){API[method] = APISettingsHelpers[method];}

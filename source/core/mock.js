@@ -219,5 +219,113 @@ var Mock = {
             
         }, 7000);
 
+    },
+
+    /* Mocking setup functionality */
+
+    selectLanguage: function(options){
+        var response_JSONString	 = {
+                        error: false,
+                        errorMessage: "somethign went wrong in the cloud.",
+                        update_action: "set_language",
+                        update_argument: options['language']
+        };
+
+        setTimeout(function(){
+            console.log(options['language']);
+            return false;
+            Proxy.slot_ProxyHandler_Settings_Update(response_JSONString);
+        }, 2000);
+
+    },
+
+    wirelessSetup: function(options){
+        var response_JSONString	 = {
+                        error: false,
+                        errorMessage: "somethign went wrong in the cloud.",
+                        update_action: "show",
+                        networks: Data.networks
+        };
+
+        setTimeout(function(){
+            Proxy.slot_ProxyHandler_Settings_Wireless(response_JSONString);
+        }, 1000);
+
+    },
+
+    selectNetwork: function(options){
+        var response_JSONString	 = {
+                        error: false,
+                        errorMessage: "somethign went wrong in the cloud.",
+                        update_action: "select",
+                        network: options['network']
+        };
+
+        setTimeout(function(){
+            Proxy.slot_ProxyHandler_Settings_Wireless(response_JSONString);
+        }, 1000);
+
+    },
+
+
+    wiredSetup: function(options){
+        var response_JSONString	 = {
+                        error: false,
+                        errorMessage: "somethign went wrong in the cloud.",
+                        update_action: "show",
+                        status: 0 // By default we say that could not connect !
+        };
+
+        setTimeout(function(){
+            Proxy.slot_ProxyHandler_Settings_Wired(response_JSONString);
+        }, 1000);
+
+
+    },
+
+    checkUpdates: function(){
+        var response_JSONString	 = {
+                        error: false,
+                        errorMessage: "somethign went wrong in the cloud."
+        };
+
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = 'downloading';
+            Proxy.slot_ProxyHandler_Settings_Updates(response_JSONString);
+        }, 2000);        
+
+
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = 'installing';
+            Proxy.slot_ProxyHandler_Settings_Updates(response_JSONString);
+        }, 5000);        
+
+        
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = 'rebooting';
+            Proxy.slot_ProxyHandler_Settings_Updates(response_JSONString);
+        }, 7000);        
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = 'done';
+            Proxy.slot_ProxyHandler_Settings_Updates(response_JSONString);
+        }, 9000);        
+
+
+
+    },
+
+
+    checkPasscode: function(response_JSONString){
+        response_JSONString['update_action'] = 'checking';
+        Proxy.slot_ProxyHandler_Settings_Passcode(response_JSONString);
+
+        setTimeout(function(){
+            response_JSONString['update_action'] = response_JSONString['passcode'] == 'passcode' ? 'success' : 'failure';        
+            Proxy.slot_ProxyHandler_Settings_Passcode(response_JSONString);
+        }, 2000);
     }
 }
