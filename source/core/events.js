@@ -10,10 +10,18 @@ $(window).load(function (){
     Global.current_network_keyboard  = NetworkKeyboardInput.init({  callback: API.wirelessSetup });
     Global.current_password_keyboard = PasswordKeyboardInput.init({ callback: API.wirelessSetup });
     Global.current_passcode_keyboard = PasscodeKeyboardInput.init({ callback: API.passcodeSetup });
+
+
+    // Now lets init setup
+    Events.init.setup();
 });
 
 var Events = {
     init: {
+        setup: function(){
+            API.ifSetup();
+        },
+
         ui: function(){
             $('div[data-role="page"]').addClass("hidden-pages");
         },
@@ -62,6 +70,7 @@ var Events = {
             });
 
             $('#settings-container .device-association-yes-link').bind('click tap', function(){
+                API.displaySetup();
                 return false;
             });
 
@@ -73,6 +82,41 @@ var Events = {
                                   })
                 return false;
             });
+
+            $('#settings-container .display-test-no-link').bind('click tap', function(){
+                UI.continueScreen({ title:  "Check display",
+                                    text:   "Please check that your [HDMI/VGA] cable is connected properly and that your display is turned on and set to the correct input.",
+                                    action: function(){API.displaySetup({update_action: 'select', display: Global.current_display})},
+                                    label:  "Try again"
+                                  })
+                return false;
+            });
+
+            $('#settings-container .display-test-yes-link').bind('click tap', function(){
+                    UI.showPage('#camera-test-screen');
+                return false;
+            });
+
+
+            $('#settings-container .camera-test-yes-link').bind('click tap', function(){
+                UI.continueScreen({title: "Setup Complete",
+                                   text:  "[Grizzly] Setup is complete! Enjoy your meeting!",
+                                   action: function(){UI.screenSaver(1, API.screenSaver());return false;}
+                })
+                return false;
+            });
+
+
+            $('#settings-container .camera-test-no-link').bind('click tap', function(){
+                UI.continueScreen({ title:  "Check Camera",
+                                    text:   "Please check that your camera is connected properly.",
+                                    action: function(){UI.showPage('#camera-test-screen');},
+                                    label:  "Try again"
+                                  })
+                return false;
+            });
+
+
 
         },
         

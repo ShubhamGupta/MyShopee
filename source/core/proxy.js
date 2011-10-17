@@ -140,6 +140,10 @@ var Proxy = {
     slot_ProxyHandler_Settings_Passcode: function(response_JSONString){
     	API.passcodeSetup(response_JSONString);
     },	
+
+    slot_ProxyHandler_Settings_Display: function(response_JSONString){
+        API.displaySetup(response_JSONString);
+    },
    
     slot_ProxyHandler_Update_NewChatMessage: function(response_JSONString){
     },	
@@ -161,6 +165,26 @@ var Proxy = {
 
     slot_ProxyHandler_Email_Invite: function(response_JSONString){
         UI.emailInvite(response_JSONString);
+    },
+
+    slot_ProxyHandler_StartInitialFlow: function ( responseJSONString )
+    {
+         //  'flow' will be the key to examine.
+         
+         if ( responseJSONString['flow'] == 'setupflow' )
+         {
+              //  [SETUP FLOW]
+              UI.startSetup();
+         }
+         else if ( responseJSONString['flow'] == 'standardflow' )
+         {
+              //  [REGULAR FLOW]
+              //   - Dont need to do anything special for normal flow.
+         }
+         else
+         {
+              //  [ERROR CASE] Unknown Value.
+         }
     }
 
 }

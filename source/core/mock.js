@@ -184,6 +184,23 @@ var Mock = {
 
     },
 
+    displaySetup: function(options){
+        var response_JSONString	 = {
+                            error: false,
+                            errorMessage: "somethign went wrong in the cloud.",
+                            displays: Data.displays,
+                            update_action: "render"
+        };
+
+        if(options && options['update_action'] == 'select'){
+            response_JSONString['update_action'] = 'selected';
+            response_JSONString['display'] = options['display'];
+        }
+
+
+        Proxy.slot_ProxyHandler_Settings_Display( response_JSONString );
+    },
+
     connectCall: function(phone_number){
         var response_JSONString	 = {
                             error: false,
@@ -327,5 +344,23 @@ var Mock = {
             response_JSONString['update_action'] = response_JSONString['passcode'] == 'passcode' ? 'success' : 'failure';        
             Proxy.slot_ProxyHandler_Settings_Passcode(response_JSONString);
         }, 2000);
+    },
+
+
+    ifSetup: function(){
+        var hash = window.location.hash;
+        if(hash){
+            var action = hash.replace("#", "");
+
+            var response_JSONString	 = {
+                            error: false,
+                            errorMessage: "somethign went wrong in the cloud."
+            };
+
+            if(action == 'setup'){
+                response_JSONString['flow'] = 'setupflow';
+                Proxy.slot_ProxyHandler_StartInitialFlow(response_JSONString);
+            }
+        }
     }
 }

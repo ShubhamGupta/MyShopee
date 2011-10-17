@@ -1,6 +1,10 @@
 var APISettingsHelpers = {
 
     // Actual API methods are kept here on purpose to separate functionality
+    ifSetup: function(){
+        Mock.ifSetup();
+    },
+
 
     passcode: function(){
         UI.continueScreen({title: "Gtalk passcode", text: "Please locate the passcode sent to you by Google for this device. You'll need to enter this code on the next screen.<br/><br/>If you still need to setup you'r Google account for this device go to http://www.google.com/?????",
@@ -33,6 +37,30 @@ var APISettingsHelpers = {
             });
         }
 
+
+
+    },
+
+    displaySetup: function(options){
+        if(!options){
+            Mock.displaySetup();
+            return false;
+        }
+
+        if(options['update_action'] == 'render'){
+            UI.displaySetup(options['displays']);
+            return false;
+        }
+
+        if(options['update_action'] == 'select'){
+            Mock.displaySetup({update_action: 'select', display: options['display']});
+            return false;
+        }
+
+        if(options['update_action'] == 'selected'){
+            UI.showPage('#display-test-screen');
+            return false;
+        }
 
 
     },

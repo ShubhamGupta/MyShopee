@@ -33,6 +33,10 @@ var sequenceAPI = {
             Mock.pinMember(member, 1);
         }
     },
+
+    inviteWithEmail: function(inputValue){
+        Mock.inviteWithEmail(inputValue);    
+    },
     
     /**** Known functions that are not passed on to mock functionality ****/
     updateMember: function(member, attribs){

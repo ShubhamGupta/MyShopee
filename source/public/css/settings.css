@@ -12,6 +12,7 @@
 #settings-container .body-bg .detected { color:#f1f1f1; font-size:21px; padding:0px 12px 0px; }
 
 #settings-container div.frame { overflow:hidden; position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%; height:233px;}
+#settings-container div.frame2 { overflow:hidden; position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%; height:161px;}
 #settings-container ul.bottom-bar { position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%;}
 #language-select-screen ul.bottom-bar {top:0px !important;}
 #wireless-select-screen ul.bottom-bar {top:0px !important;}
@@ -20,7 +21,7 @@
 #settings-container ul.bottom-bar li a { display:block; text-decoration:none; color:#f1f1f1; font-size:17px; font-weight:bold; text-decoration:none; }
 #settings-container ul.bottom-bar li .floatRight { margin-top:10px; }
 
-#settings-container ul.bottom-bar2 { overflow:hidden; position:absolute; bottom:0px; list-style:none; margin:0px; padding:0px; width:100%; max-height:150px; overflow:auto; }
+#settings-container ul.bottom-bar2 { overflow:hidden; position:absolute; list-style:none; margin:0px; padding:0px; width:100%; overflow:auto; }
 #settings-container ul.bottom-bar2 li { background:#010101; border-top:solid 1px #676767; border-bottom:solid 1px #676767; padding:3px 9px; list-style:none; margin:0px; overflow:hidden; }
 #settings-container ul.bottom-bar2 li .img { margin:0px; padding:0px; float:left; }
 #settings-container ul.bottom-bar2 li a { display:block; text-decoration:none; color:#f1f1f1; font-size:17px; font-weight:bold; text-decoration:none; }

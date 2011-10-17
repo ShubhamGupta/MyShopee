@@ -105,8 +105,8 @@ var UI = {
             var cancelCallback = options['cancelCallback'];
             var timeout = options['timeout'] || 0;
 
-            if(title){$('#toast p').text( title );}
-            $('#toast h2').text( message );
+            if(title){$('#toast p').html( title );}
+            $('#toast h2').html( message );
             $('#cancel-toast').unbind('click tap').bind('click tap', function(){
                 $('#toast').hide('fast');
                 toast_cancel = true;
@@ -314,6 +314,21 @@ var UI = {
 
     wirelessPassword: function(){
         this.showPage('#wireless-password-screen');
+    },
+
+    displaySetup: function(displays){
+        jQuery('#display-settings-screen .bottom-bar2').text('');
+        displays.forEach(function(n, i){
+            jQuery('#display-settings-screen .bottom-bar2').append('<li id="display-'+ i +'"><a href="javascript:void(0);"><img src="'+ n['image'] +'" alt="" class="img"><span class="text">'+ n.label +'</span><img src="images/settings/arrow-continue.gif" class="floatRight"></a></li>');
+            jQuery('#display-'+i).dblclick(function(){
+                Global.current_display = n;
+                API.displaySetup({update_action: 'select', display: n});
+            });        
+        });
+
+        VerticalSwipeMaster.init('#display-settings-screen .bottom-bar2');
+        this.showPage('#display-settings-screen');
+        
     },
 
     welcomeScreen: function(){

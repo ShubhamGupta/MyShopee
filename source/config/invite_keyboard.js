@@ -8,7 +8,9 @@ var InviteKeyboardInput = {
         SwipeMaster.init('.ui-autocomplete');
         jQuery.keyboard.keyaction.invite = function(base){
 
-          Mock.inviteWithEmail(jQuery(Global.current_invite_keyboard.getkeyboard().preview).val());
+          var inputValue = jQuery(Global.current_invite_keyboard.getkeyboard().preview).val()
+
+          API.inviteWithEmail(inputValue);
           base.close(true);
           jQuery(Global.current_invite_keyboard.getkeyboard().preview).val(jQuery(Global.current_invite_keyboard.getkeyboard().preview).attr("title"));
 

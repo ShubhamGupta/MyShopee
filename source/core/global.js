@@ -11,6 +11,7 @@ var Global = {
     current_network_keyboard: null,
     current_password_keyboard: null,
     current_passcode_keyboard: null,
+    current_display: null,
     dialpad: null,
     inmeetingTime: 0,
     inmeetingTimer: null,
