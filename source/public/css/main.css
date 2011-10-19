@@ -89,13 +89,14 @@ h1{
     background:url("../images/main/header/logo-2.png") no-repeat scroll 50% 50% transparent;
 }
 .header .time{
-    float:right;
+    float:left;
     height:17px;
-    width:220px;
+    width:80px;
     margin-top:10px;
     color:#fff;
-    font-size: 15px;
-    text-align:right;
+    font-size: 12px;
+    text-align:left;
+	margin-left:204px;
 }
 .header .time span{
     border-right:1px solid #ccc;
@@ -103,14 +104,13 @@ h1{
     margin-right:2px;
 }
 .header .title{
-    width:200px;
+    width:100px;
     height:20px;
     text-transform:uppercase;
     position:absolute;
-    left:50%;
-    margin-left:-100px;
+    left:8px;
     top:12px;
-    text-align:center;
+    text-align:left;
     font-size:12px;
     font-weight:bold;
     color:#fff;
@@ -150,12 +150,13 @@ h1{
     color:#fff;
 }
 .tiles h3{
-    padding:8px 5px 6px 10px;
+    padding:0px 5px 6px 10px;
     font-size:13px;
 }
 .tiles p{
-    padding:5px 0 0 18px;
-    font-size:13px;
+    padding:5px 0 0 15px;
+    font-size:14px;
+	color:#FFFFFF;
 }
 .tiles h3{
     text-align:center;
@@ -164,7 +165,7 @@ h1{
     background:transparent url(../images/main/tiles/hr.png) no-repeat bottom center;
 }
 .tiles p{
-    margin-top:7px;
+    margin-top:0px;
     word-wrap: break-word;
     line-height: 1.2;
 }
@@ -370,7 +371,7 @@ h1{
     left:0;
     width:480px;
     height:272px;
-    background:black url(../images/backgrounds/blue.png) top left no-repeat;
+    background:black url(../images/backgrounds/purple-new.png) top left no-repeat;
     z-index:999;
     color:white;
     text-align:center;
@@ -378,6 +379,7 @@ h1{
 }
 .splash-time{
     font-size: 130px;
+	margin-top:50px;
 }
 .splash-date{
     margin-top:20px;
@@ -411,7 +413,7 @@ h1{
 .collapsible h1{
     height:17px;
     width:100%;
-    padding:8px 0 8px 15px;
+    padding:8px 0 8px 8px;
     margin: 0 0 0 0;
 }
 
@@ -430,14 +432,21 @@ h1{
     -webkit-transition:height 0.2s;
 }
 .open h1 {
-    background: url(../images/main/buttons/accordion-active.png) top left no-repeat;
+    background: url(../images/main/buttons/accordion-active-new.png) top left no-repeat;
+	font-size:17px;
+	font-weight:bold;
 }
 .black h1 {
     background: url(../images/main/buttons/accordion-active-black.png) top left no-repeat;
+	font-size:17px;
+	font-weight:bold;
 }
 .closed h1 {
-    background: url(../images/main/buttons/accordion-collapsed.png) top left no-repeat;
+    background: url(../images/main/buttons/accordion-collapsed-new.png) top left no-repeat;
+	font-size:17px;
+	font-weight:bold;
 }
+.closed h1 .call-icon { float:left; margin-right:5px; }
 
 #toast{
     display:none;
@@ -494,7 +503,7 @@ h1{
 
 /*overrides*/
 .ui-page{
-    background:transparent url(../images/backgrounds/blue.png) no-repeat top left;
+    background:transparent url(../images/backgrounds/purple.png) no-repeat top left;
     font-size:17px;
     font-family: "Droid Sans", serif;
     width:480px !important;
@@ -558,3 +567,11 @@ h1{
 /*----- New CSS created by Aks -----*/
 div.relative { position:relative; }
 div.relative input.abs { position:absolute; width:310px; border:none; top:63px; left:20px; background:transparent!important; }
+
+.header .right-icons { width:182px; float:right; position:absolute; right:8px; top:6px; }
+.header .right-icons .sounds { width:88px; height:28px; float:left;  background:transparent url(../images/main/header/sound-icons-bg.png) 0 0 no-repeat; }
+.header .right-icons .sounds a.low { background:transparent url(../images/main/icons/sound-low.png) 0 0 no-repeat; width:17px; height:15px; float:left; margin:6px 0px 0px 16px; }
+.header .right-icons .sounds a.high { background:transparent url(../images/main/icons/sound-high.png) 0 0 no-repeat; width:23px; height:16px; float:left; margin:6px 0px 0px 21px; }
+
+.header .right-icons .mike { width:88px; height:28px; float:left;  background:transparent url(../images/main/header/mike-icon-bg.png) 0 0 no-repeat; margin-left:5px; }
+.header .right-icons .mike a.mute { background:transparent url(../images/main/icons/mute.png) 0 0 no-repeat; width:16px; height:19px; float:left; margin:3px 0px 0px 36px; }

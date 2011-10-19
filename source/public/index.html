@@ -20,13 +20,20 @@
        <div class="mainWrapper" style="-webkit-transform-style:preserve-3d; -webkit-perspective:900; -webkit-transform:translateZ(0)">
         <div data-role="page" id="home-container" class="ui-page">
             <div class='header'>
+				<div class="right-icons">
+					<div class="sounds">
+						<a href="#" class="low"></a>
+						<a href="#" class="high"></a>
+					</div>
+					<div class="mike"><a href="#" class="mute"></a></div>
+				</div>
                 <div class='time'></div>
-                <div class='logo'></div>
+                <!--<div class='logo'></div>-->
                 <div class='title'>BOARD ROOM</div>
             </div>
             <div id="home-accordion" class="accordion-container">
                 <div id="home" class="collapsible open">
-                    <h1>Scheduled Meetings</h1>
+                    <h1>calendar</h1>
                     <div class='tiles-container preserve3d' id='home-tiles'>
                         <div class='tiles'>
                         </div>
@@ -50,7 +57,7 @@
                 </div>
                 
                 <div id="home-dial" class="collapsible closed black relative">
-                    <h1>Dial a Phone Number</h1>
+                    <h1><img src='images/main/icons/call2.png' class='call-icon' align="absmiddle"> Dial a Phone Number</h1>
                     <div id="touch-container-2" class="touch-container">
                         <p class="touch-to-enter"><a href="#dialpad" data-transition="slideup">touch to enter a phone number</a></p>
                     </div>
@@ -127,10 +134,10 @@
         </div>
 
         <div id="splash-screen">
-            <div class='header'>
+            <!--<div class='header'>
                 <div class='logo'></div>
                 <div class='title'>BOARD ROOM</div>
-            </div>
+            </div>-->
             <div class="splash-time">
                 <p></p>
             </div>
