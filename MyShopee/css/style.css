@@ -1,0 +1,36 @@
+#main{
+margin:0px;
+padding:0px;
+}
+
+#mainHead{
+width:100%;
+background-color:gray;
+height:50px;
+line-height:50px;
+text-align:center;
+}
+
+#selectorPane{
+height:100%;
+width:19%;
+float:left;
+background-color:#FFFFFF;
+}
+
+#main #productPane{
+float:right;
+width:80%;
+border-left:solid 2px black;
+background-color:#FFFFFF;
+}
+#main #productPane div{
+display:none;
+float:left;
+}
+#main #productPane .show{
+display:block;
+}
+#main #productPane .show_initial{
+display:block;
+}
